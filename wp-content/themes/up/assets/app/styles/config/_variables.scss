@@ -1,0 +1,43 @@
+$orange: #cc5a39;
+$red1: #b22e29;
+$red2: #f22e32;
+$yellow: #e2c135;
+$blue1: #5a6592;
+$blue2: #1e3764;
+$green: #83ad74;
+$purple: #b699a1;
+$beige: #f6f3eb;
+$gray1: #e1e1e1;
+$gray2: #6c6b69;
+$gray3: #2c2e35;
+$grayText: #313131;
+
+$white: #fff;
+$black: #000;
+
+$text-color: $grayText;
+
+// Container
+$container-padding: 24px;
+
+//
+// Transitions
+//
+$transition-default:
+  all 200ms linear,
+  z-index 0ms,
+  display 0ms;
+$transition-quick:
+  all 100ms linear,
+  z-index 0ms,
+  display 0ms;
+$transition-lazy:
+  all 250ms linear,
+  z-index 0ms,
+  display 0ms;
+$transition-default-with-delay:
+  all 200ms linear 200ms,
+  z-index 0ms,
+  display 0ms;
+$transition-opacity: opacity 0.2s ease;
+$transition: all 300ms ease;

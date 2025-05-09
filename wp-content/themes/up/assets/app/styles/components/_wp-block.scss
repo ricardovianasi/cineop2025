@@ -1,0 +1,40 @@
+*:not(.wp-block-gallery) > .wp-block-image {
+  &:not(:first-child) {
+    margin-top: 2em;
+  }
+
+  position: relative;
+
+  &.size-large {
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+
+      @include media('<=768px') {
+        display: none;
+      }
+    }
+
+    &::before {
+      background-color: #000;
+      height: 100%;
+      right: calc(100% + 24px);
+      top: 0;
+      width: 100vw;
+    }
+
+    &::after {
+      background-color: $primary-color;
+      bottom: 0;
+      height: 132px;
+      right: 0;
+      width: 132px;
+    }
+
+    img {
+      margin: 0 auto;
+      width: 100%;
+    }
+  }
+}

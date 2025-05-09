@@ -1,0 +1,43 @@
+//
+// Vendors
+//
+//@import "../../node_modules/reset-css/sass/reset";
+@import '../../node_modules/include-media/dist/include-media';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: "pretendard", sans-serif;
+  }
+}
+
+html,
+body {
+  font-family: "pretendard", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: 'slnt' 0;
+  overflow-x: hidden;
+}
+
+// Config
+@import 'config/variables';
+@import 'config/utils';
+
+// Components
+@import 'components/container';
+
+
+// Base
+@import 'base/header';
+@import 'base/nav';
+@import 'base/footer';
+@import 'base/main';
+
+// Partials
+@import "partials/home/index";
+
