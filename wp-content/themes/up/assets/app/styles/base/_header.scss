@@ -1,6 +1,24 @@
 .header {
   position: relative;
 
+  img {
+    width: 100%;
+  }
+
+  .desktop {
+    @include media('<=768px') {
+      display: none;
+    }
+  }
+
+  .mobile {
+    display: none;
+
+    @include media('<=768px') {
+      display: block;
+    }
+  }
+
   .header-menu-btn {
     position: absolute;
   }
