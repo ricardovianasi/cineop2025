@@ -6,7 +6,7 @@ get_header(); ?>
       'heading_title' => 'Notícia'
     ]); ?>
     <div class="main-content">
-      <div class="container content flex-col">
+      <div class="container container-small content flex-col">
         <div class="main-header-subtitle">
           <h2 class="h4">
             <?php the_title(); ?>
