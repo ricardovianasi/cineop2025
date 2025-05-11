@@ -12,9 +12,7 @@ if($gallery_items):
       $count = 0;
       foreach ($gallery_items as $key => $img):
         $count++;
-        if($count == 2): ?>
-            <div><img src="<?php bloginfo('template_directory'); ?>/assets/dist/images/gallery-item.svg" alt="" /></div>
-        <?php elseif ($count === 5): ?>
+        if($count === 5): ?>
             <div class="cta">
                 <a href="https://www.flickr.com/photos/universoproducao/" class="flex" target="_blank">
                     <span>
@@ -25,7 +23,6 @@ if($gallery_items):
                     <span class="icon-next"></span>
                 </a>
             </div>
-            <div><img src="<?php bloginfo('template_directory'); ?>/assets/dist/images/gallery-item2.svg" alt="" /></div>
         <?php endif; ?>
         <div class="">
           <a data-fancybox="gallery" href="<?php echo wp_get_attachment_image_url($img['ID'], 'full') ?>">

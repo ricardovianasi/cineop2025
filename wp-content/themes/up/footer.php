@@ -27,7 +27,7 @@
           <li>
             <a
               class
-              href="https://www.facebook.com/mostratiradentes"
+              href="https://www.facebook.com/cineop"
               target="_blank"
               title="Facebook"
             >
