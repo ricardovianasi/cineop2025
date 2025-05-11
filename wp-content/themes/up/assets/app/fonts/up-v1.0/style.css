@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'up';
-  src:  url('fonts/up.eot?3tltlf');
-  src:  url('fonts/up.eot?3tltlf#iefix') format('embedded-opentype'),
-    url('fonts/up.ttf?3tltlf') format('truetype'),
-    url('fonts/up.woff?3tltlf') format('woff'),
-    url('fonts/up.svg?3tltlf#up') format('svg');
+  src:  url('fonts/up.eot?29du4w');
+  src:  url('fonts/up.eot?29du4w#iefix') format('embedded-opentype'),
+    url('fonts/up.ttf?29du4w') format('truetype'),
+    url('fonts/up.woff?29du4w') format('woff'),
+    url('fonts/up.svg?29du4w#up') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,27 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-arrow-right-2:before {
+  content: "\e94c";
+}
+.icon-arrow-left-2:before {
+  content: "\e94d";
+}
+.icon-mct-2025:before {
+  content: "\e94b";
+}
+.icon-lines:before {
+  content: "\e94a";
+}
+.icon-menu:before {
+  content: "\e949";
+}
+.icon-15-cinemundi:before {
+  content: "\e947";
+}
+.icon-18-cinebh:before {
+  content: "\e948";
+}
 .icon-clock:before {
   content: "\e946";
 }

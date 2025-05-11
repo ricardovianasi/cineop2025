@@ -1,0 +1,49 @@
+.banner {
+  background: #0a0a0a;
+  position: relative;
+  padding: 100px 0;
+
+  &-slider {
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '';
+
+      position: absolute;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    &::before {
+      background-image: url('../images/banner-left.png');
+      left: -16px;
+      height: 100%;
+      width: 324px;
+      transform: translateX(-100%);
+      top: 0;
+    }
+
+    &::after {
+      background-image: url('../images/banner-right.png');
+      bottom: 0;
+      right: -16px;
+      width: 289px;
+      height: 348px;
+      transform: translateX(100%);
+    }
+  }
+
+  .slider-controls {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 56.71%,
+      #000000 89.71%
+    );
+    bottom: 0;
+    padding: 60px 32px;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+  }
+}

@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: '#{$icomoon-font-family}';
-  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?3tltlf');
-  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?3tltlf#iefix') format('embedded-opentype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?3tltlf') format('truetype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?3tltlf') format('woff'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?3tltlf##{$icomoon-font-family}') format('svg');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?29du4w');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?29du4w#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?29du4w') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?29du4w') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?29du4w##{$icomoon-font-family}') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -27,6 +27,41 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-arrow-right-2 {
+  &:before {
+    content: $icon-arrow-right-2; 
+  }
+}
+.icon-arrow-left-2 {
+  &:before {
+    content: $icon-arrow-left-2; 
+  }
+}
+.icon-mct-2025 {
+  &:before {
+    content: $icon-mct-2025; 
+  }
+}
+.icon-lines {
+  &:before {
+    content: $icon-lines; 
+  }
+}
+.icon-menu {
+  &:before {
+    content: $icon-menu; 
+  }
+}
+.icon-15-cinemundi {
+  &:before {
+    content: $icon-15-cinemundi; 
+  }
+}
+.icon-18-cinebh {
+  &:before {
+    content: $icon-18-cinebh; 
+  }
+}
 .icon-clock {
   &:before {
     content: $icon-clock; 

@@ -1,0 +1,39 @@
+.menu-btn {
+  align-items: center;
+  background: $white;
+  border-radius: 100%;
+  color: $blue2;
+  display: flex;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+}
+
+.menu-sandwich {
+  width: 18px;
+  height: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.menu-sandwich span {
+  display: block;
+  height: 2px;
+  background-color: $blue2;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.menu-sandwich.open span:nth-child(1) {
+  transform: rotate(45deg) translateY(5px);
+}
+
+.menu-sandwich.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-sandwich.open span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-5px);
+}
