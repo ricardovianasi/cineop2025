@@ -12,7 +12,7 @@ if($gallery_items):
       $count = 0;
       foreach ($gallery_items as $key => $img):
         $count++;
-        if($count === 5): ?>
+        if($count === 6): ?>
             <div class="cta">
                 <a href="https://www.flickr.com/photos/universoproducao/" class="flex" target="_blank">
                     <span>
