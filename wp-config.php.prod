@@ -21,8 +21,8 @@
 
 //$_SERVER['HTTPS']='on';
 
-define('WP_HOME','http://167.172.252.128.com.br/');
-define('WP_SITEURL','http://167.172.252.128.com.br/');
+define('WP_HOME','http://167.172.252.128/');
+define('WP_SITEURL','http://167.172.252.128/');
 //define('RELOCATE',true);
 
 define( 'AS3CF_SETTINGS', serialize( array(
@@ -36,8 +36,8 @@ define('WP_CACHE', true); // Added by W3 Total Cache
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'wp-cineop-2025' );
-
+define( 'DB_NAME', 'wp-cineop2025' );
+exiu
 /** Database username */
 define( 'DB_USER', 'cineop2025' );
 

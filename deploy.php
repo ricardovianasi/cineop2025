@@ -1,4 +1,5 @@
 <?php
+
 namespace Deployer;
 
 require 'recipe/common.php';
@@ -6,7 +7,7 @@ require 'recipe/common.php';
 // Config
 
 // Project name
-set('application', 'mct2025');
+set('application', 'cineop2025');
 
 set('repository', 'git@github.com:ricardovianasi/cineop2025.git');
 
@@ -33,56 +34,46 @@ set('prod_files', ['wp-config.php.prod', '.htaccess.prod']);
 // Hosts
 
 host('167.172.252.128')
-    ->set('remote_user', 'root')
-    ->set('identity_file', '~/.ssh/id_rsa')
-    ->set('deploy_path', '/var/www/html/{{application}}');
+  ->set('remote_user', 'root')
+  ->set('identity_file', '~/.ssh/id_rsa')
+  ->set('deploy_path', '/var/www/html/{{application}}');
 
 // Hooks
 //Task to change shared filenames.
-task('up:profiles', function() {
+task('up:profiles', function () {
 
-    foreach (get('prod_files') as $file) {
-        if(strpos($file, '.prod')) {
-            // Rename
-            run("mv {{release_path}}/$file {{release_path}}/" . str_replace('.prod', '', $file));
-        }
+  foreach (get('prod_files') as $file) {
+    if (strpos($file, '.prod')) {
+      // Rename
+      run("mv {{release_path}}/$file {{release_path}}/" . str_replace('.prod', '', $file));
     }
+  }
 });
 
-task('up:compile_assets', function() {
-    $assetsDir = __DIR__ . '/' . trim(get('assets_dir'), '/');
+task('up:compile_assets', function () {
+  $assetsDir = __DIR__ . '/' . trim(get('assets_dir'), '/');
 
-    // Check if shared dir does not exist.
-    if (!testLocally("[ -d $assetsDir ]")) {
-        throw new Exception("Assets dir '$assetsDir' doesn't exist.");
-    }
+  // Check if shared dir does not exist.
+  if (!testLocally("[ -d $assetsDir ]")) {
+    throw new Exception("Assets dir '$assetsDir' doesn't exist.");
+  }
 
-    runLocally("cd $assetsDir && npm rum build");
-    runLocally("cd " . __DIR__);
+  runLocally("cd $assetsDir && npm rum build");
+  runLocally("cd " . __DIR__);
 });
 
-task('up:rsync', function() {
-    upload(get('rsync_src'), get('rsync_dest'));
+task('up:rsync', function () {
+  upload(get('rsync_src'), get('rsync_dest'));
 });
 
 // Tasks
 desc('Deploy your project');
 task('deploy', [
-    'deploy:info',
-    'deploy:prepare',
-    'deploy:lock',
-    'deploy:release',
-    'deploy:update_code',
-    'deploy:shared',
-    'up:profiles',
-    'deploy:writable',
-    'deploy:clear_paths',
-    'up:compile_assets',
-    'up:rsync',
-    'deploy:symlink',
-    'deploy:unlock',
-    'deploy:cleanup',
-    'deploy:success'
+  'deploy:prepare',
+  'up:profiles',
+  'up:compile_assets',
+  'up:rsync',
+  'deploy:publish',
 ]);
 
 
