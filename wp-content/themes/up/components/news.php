@@ -54,7 +54,7 @@ class News_Shortcode {
     }
 
     ob_start(); ?>
-    <div class="news">
+    <div class="news-wrapper">
       <?php foreach ($items as $item) {
         echo self::getInstance()->render($item);
       }?>
@@ -69,24 +69,18 @@ class News_Shortcode {
 
     ob_start(); ?>
       <div class="news-item">
-        <?php if ($home): ?><a href="<?php echo get_the_permalink($news) ?>"><?php else: ?><div class="news-item"><?php endif; ?>
+        <a href="<?php echo get_the_permalink($news) ?>">
           <figure><?php echo wp_get_attachment_image($news_thumbnail['ID'], 'news') ?></figure>
-          <?php if (!$home): ?>
-            <span class="info">
+          <span class="content">
+            <span class="title"><?php echo get_the_title($news) ?></span>
+            <span class="heading flex">
               <span><?php echo $post_date ?></span>
-              <?php if ($news_read_time): ?>
-                <span><?php echo $news_read_time ?></span>
+              <?php if (!$home): ?>
+                  <span class="read-more"><?php echo __('Saiba Mais', 'up')?> <i class="icon-arrow-right-2"></i></span>
               <?php endif; ?>
             </span>
-          <?php endif; ?>
-          <span class="title"><?php echo get_the_title($news) ?></span>
-          <?php if ($home): ?>
-            <span class="date"><?php echo $post_date ?></span>
-            <span class="tag">NOTÍCIA</span>
-          <?php else: ?>
-            <a class="button button-primary" href="<?php echo get_the_permalink($news) ?>">Saiba Mais</a>
-          <?php endif; ?>
-    <?php if ($home): ?></a><?php else: ?></div><?php endif; ?>
+          </span>
+        </a>
       </div>
     <?php return ob_get_clean();
   }

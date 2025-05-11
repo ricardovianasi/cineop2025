@@ -1,75 +1,7 @@
 .header {
-  background-image: url('../images/header-desktop.png');
-  color: $white;
-  overflow: hidden;
   position: relative;
 
-  &-bgc {
+  .header-menu-btn {
     position: absolute;
-  }
-
-  &-content {
-    align-items: center;
-    display: grid;
-    grid-template-columns: auto minmax(0, 554px) auto;
-    justify-content: space-between;
-    position: relative;
-    z-index: 100;
-  }
-
-  &-logo {
-    padding: 30px 0;
-
-    &,
-    a {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    a {
-      padding-left: 18%;
-
-      img {
-        &:first-child {
-          width: 328px;
-        }
-
-        &:last-child {
-          margin-left: 44%;
-          width: 248px;
-        }
-      }
-    }
-
-    span {
-      font-weight: 400;
-      font-size: 12px;
-      line-height: 120%;
-      max-width: 328px;
-      text-transform: uppercase;
-    }
-  }
-
-  &-date {
-    align-items: flex-end;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    margin-top: 32px;
-
-    span {
-      color: $beige;
-      font-weight: 500;
-      line-height: 120%;
-      max-width: 182px;
-      text-align: right;
-    }
-
-    b {
-      display: block;
-      font-size: 24px;
-      font-weight: 700;
-    }
   }
 }

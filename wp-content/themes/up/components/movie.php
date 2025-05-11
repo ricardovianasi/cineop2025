@@ -227,10 +227,33 @@ class Movie
     //get ACF fields
     $movie_id             = get_field( 'movie_id', $movie );
     $movie_dir            = get_field( 'movie_dir', $movie );
+    $descricao_direcao          = get_field( 'descricao_direcao', $movie );
     $movie_resume         = get_field( 'movie_resume', $movie );
     $movie_img_cover      = get_field( 'movie_img_cover', $movie );
     $hero_banner          = get_field( 'hero_banner', $movie );
     $movie_online         = get_field( 'player_online', $movie );
+    $estado_de_producao        = get_field( 'estado_de_producao', $movie );
+    $pais        = get_field( 'pais', $movie );
+    
+    if (!$movie_dir && $descricao_direcao) {
+      foreach ($descricao_direcao as $des) {
+        $nome = !empty($des['nome']) ? $des['nome'] : null;
+        if($nome) {
+	        $movie_dir[] = $nome;
+        }
+      }
+      
+	    $movie_dir = implode(', ', $movie_dir);
+    }
+    
+    $estadoPais = [];
+    if ($estado_de_producao) {
+	    $estadoPais[] = $estado_de_producao;
+    }
+    if ($pais) {
+	    $estadoPais[] = $pais;
+    }
+    
 
     $cover_img = "";
     if( $movie_img_cover ) {
@@ -245,11 +268,26 @@ class Movie
         <?php echo $cover_img; ?>
 
         <?php if($movie_online): ?>
-          <span class="notice uppercase"><?php echo __('assista online', 'up')?></span>
+          <span class="notice tag uppercase"><?php echo __('assista online', 'up')?></span>
         <?php endif; ?>
-
         <span class="movie-content">
           <span class="title"><?php echo get_the_title($movie); ?></span>
+          <?php if ($movie_dir): ?>
+            <span class="direction on-hover"><?php echo __('Direção', 'up') ?>: <?php echo $movie_dir ?></span>
+          <?php endif; ?>
+          <?php if ($movie_resume): ?>
+            <span class="info on-hover"><?php echo $movie_resume ?></span>
+          <?php endif; ?>
+          <?php if (count($estadoPais) > 0): ?>
+            <span class="country on-hover"><?php echo implode( ' / ', $estadoPais ); ?></span>
+          <?php endif; ?>
+          <?php if ($movie_player_obj->isPlayerOpen()): ?>
+            <span class="read-more btn link on-hover uppercase">
+              <?php echo __('Assista', 'up') ?> <i class="icon-arrow-right"></i></span>
+          <?php else: ?>
+            <span class="read-more btn link on-hover uppercase">
+              <?php echo __('Saiba mais', 'up') ?> <i class="icon-arrow-right"></i></span>
+          <?php endif; ?>
         </span>
       </a>
     </div>
@@ -296,18 +334,18 @@ class Movie
           </div>
           <?php if($isCarousel): ?>
             <div class="section-controls flex flex-col md:flex-row items-center justify-between w-full gap-4">
-              <div class="slider-pagination"></div>
-              <div class="slider-navigation hidden md:flex">
+              <div class="slider-controls dark ">
                 <button class="slider-button-prev">
-                  <i class="icon-prev"></i>
+                  <i class="icon-arrow-left"></i>
                 </button>
+                <div class="slider-pagination"></div>
                 <button class="slider-button-next">
-                  <i class="icon-next"></i>
+                  <i class="icon-arrow-right"></i>
                 </button>
               </div>
               <?php if(self::getInstance()->getLink()): ?>
-                <div><a class="button button-primary" href="<?php echo self::getInstance()->getLink(); ?>">
-                    <?php echo __('Ver todos os filmes', 'up') ?></a></div>
+                <div><a class="btn-link" href="<?php echo self::getInstance()->getLink(); ?>">
+                    <i class="icon-lines"></i><?php echo __('Ver todos os filmes', 'up') ?> <i class="icon-arrow-right"></i></a></div>
               <?php endif; ?>
             </div>
           <?php endif; ?>
@@ -324,7 +362,8 @@ class Movie
       'hide_empty' => true
     ));
     ob_start(); ?>
-    <div class="movie-filter">
+    <div class="movie-filter container container-1216">
+      <div class="movie-id"></div>
       <div class="movie-filter-wrapper">
         <span><?php echo __('Filtrar filmes por', 'up'); ?>:</span>
         <form action="" method="get">
@@ -353,7 +392,7 @@ class Movie
               </select>
             </div>
             <div class="col">
-              <button class="button button-primary" type="submit"><?php echo __('Buscar', 'up')?></button>
+              <button class="btn orange" type="submit"><?php echo __('Buscar', 'up')?></button>
             </div>
           </div>
         </form>

@@ -46,28 +46,32 @@ if( !function_exists('template_setup')):
     );
 
     // Banner
-    add_image_size( 'banner_desktop_size', 1216, 700, true);
+    add_image_size( 'banner_desktop_size', 1244, 700, true);
     add_image_size( 'banner_mobile_size', 624, 368, true);
+	  
+	  add_image_size( 'intro_gallery', 800, 452, true);
 
     // Thematic
-    add_image_size( 'thematic', 586, 381, true);
-    add_image_size( 'honor', 1440, 450, true);
+    add_image_size( 'thematic', 1176, 540, true);
+    add_image_size( 'honor', 384, 456, true);
 
     // News
-    add_image_size( 'news', 400, 400, true);
+    add_image_size( 'news', 464, 320, true);
     add_image_size( 'tv', 592, 333, true);
 
     // Gallery
-    add_image_size( 'gallery', 765, 280, true);
+    add_image_size( 'gallery', 460, 250, true);
 
     // Debate
-    //add_image_size( 'debate', 610, 406, true);
+    add_image_size( 'debate', 416, 624, true);
+    add_image_size( 'debate_grid', 170, 200, true);
+    add_image_size( 'debate_list', 1172, 548, true);
 
     // Block
     add_image_size( 'block_workshop', 464, 464, true);
 
     // Masterclass
-    add_image_size( 'masterclass', 586, 694, true);
+    add_image_size( 'masterclass', 350, 415, true);
 
     // Movie
     add_image_size( 'movie_poster', 280, 432, true);
@@ -82,9 +86,9 @@ if( !function_exists('template_setup')):
     add_image_size( 'timeline', 592, 400, true);
 
     // Art
-    add_image_size( 'art', 708, 560, true);
+    add_image_size( 'art', 592, 371, true);
 
-    add_image_size( 'expo', 536, 400, true);
+    add_image_size( 'expo', 592, 354, true);
 
     add_image_size( 'mostra', 366, 151, true);
   }
@@ -123,6 +127,27 @@ function allow_nbsp_in_tinymce( $mceInit ) {
   return $mceInit;
 }
 add_filter( 'tiny_mce_before_init', 'allow_nbsp_in_tinymce' );
+
+function get_custom_excerpt($content, $length = 20) {
+  // Verifica se o conteúdo está vazio
+  if (empty($content)) {
+    return '';
+  }
+
+  // Remove tags HTML e shortcodes
+  $content = strip_tags(strip_shortcodes($content));
+
+  // Divide o conteúdo em palavras
+  $words = explode(' ', $content);
+
+  // Limita o número de palavras ao valor definido
+  if (count($words) > $length) {
+    $words = array_slice($words, 0, $length);
+    $content = implode(' ', $words) . '...'; // Adiciona reticências
+  }
+
+  return $content;
+}
 
 function thumborize($image_url, $width, $height) {
   //$thumborURL = 'http://162.243.253.29:8888/unsafe/';

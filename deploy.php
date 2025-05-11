@@ -4,7 +4,7 @@ namespace Deployer;
 require 'recipe/common.php';
 
 // Project name
-set('application', 'cineop2024');
+set('application', 'cineop2025');
 
 // Project repository
 set('repository', 'git@github.com:ricardovianasi/cineop2024.git');
@@ -31,7 +31,7 @@ set('prod_files', ['wp-config.php.prod', '.htaccess.prod']);
 
 // Hosts
 host('1')
-  ->hostname('159.65.191.102')
+  ->hostname('167.172.252.128')
   ->user('root')
   ->identityFile('~/.ssh/id_rsa')
   ->multiplexing(true)

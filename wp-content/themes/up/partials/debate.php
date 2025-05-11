@@ -34,44 +34,49 @@ $cat_place_terms = get_the_terms($post->ID, 'cat_place');
 $block_place = join(', ', wp_list_pluck($cat_place_terms, 'name'));
 
 $home_debate = get_field('up_home_debate', 'option');
-$heading_title = !empty($home_debate['up_home_debate_title'])
+$heading_title_debate = !empty($home_debate['up_home_debate_title'])
   ? $home_debate['up_home_debate_title']
   : __('DEBATES E RODAS DE CONVERSA', 'up');
 
+$home_art = get_field('up_home_art', 'option');
+$heading_title_art = !empty($home_art['up_home_art_title'])
+  ? $home_art['up_home_art_title']
+  : __('Arte', 'up');
+
+$heading_title = $activity_type === 'debate' ? $heading_title_debate : $heading_title_art;
+
 get_header(); ?>
 <div class="main-container container container-1216 flex-col">
-
-
-  <?php if ($activity_type === 'debate'): ?>
-    <div class="main-header">
-      <div class="container container-1216 flex-col">
-        <div class="main-header-title">
-          <span class="h1 uppercase"><?php echo $heading_title ?></span>
-        </div>
+  <div class="main-header">
+    <div class="container container-1216 flex-col">
+      <div class="main-header-title">
+        <span class="h1 uppercase"><?php echo $heading_title ?></span>
       </div>
     </div>
-  <?php else: ?>
-    <?php get_template_part('partials/heading', '', $args); ?>
-  <?php endif; ?>
+  </div>
 
   <div class="main-content">
     <div class="debate-single">
       <?php if ($block_image_grid): ?>
-        <div class="img-grid">
+      <div class="expanded">
+        <div class="container big justify-center">
+          <div class="img-grid">
           <?php $cont=0; foreach ($block_image_grid as  $key => $img) {
             $cont++;
-            if ($cont >= 9) {
+            if ($cont >= 8) {
               break;
             }
-            echo wp_get_attachment_image($img['ID'], 'prog');
+            echo wp_get_attachment_image($img['ID'], 'debate_grid');
           } ?>
         </div>
-      <?php elseif ($activity_image_banner && $activity_type === 'debate'): ?>
+        </div>
+      </div>
+      <?php else: ?>
         <figure>
           <?php echo wp_get_attachment_image($activity_image_banner, 'hero_banner') ?>
         </figure>
       <?php endif; ?>
-      <div class="container-948">
+      <div class="container content">
         <div class="desc">
           <div class="title">
             <?php if ($activity_tag): ?>
@@ -79,9 +84,7 @@ get_header(); ?>
                 <?php render_tags($activity_tag); ?>
               </div>
             <?php endif; ?>
-            <?php if ($activity_type === 'debate'): ?>
             <h1 class="uppercase"><?php the_title(); ?></h1>
-            <?php endif; ?>
           </div>
           <div class="info">
             <?php if ($activity_date): ?>
@@ -97,7 +100,7 @@ get_header(); ?>
 
           <?php if ($player): ?>
             <div class="play">
-              <h3>Assista ao debate</h3>
+              <h3><?php echo __('Assista', 'up')?></h3>
               <div class="play-wrapper">
                 <?php echo $player ?>
               </div>

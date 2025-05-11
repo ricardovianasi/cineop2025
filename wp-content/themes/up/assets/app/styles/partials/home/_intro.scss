@@ -1,0 +1,39 @@
+.intro {
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+
+  &-id {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1920px;
+  }
+
+  .container {
+    align-items: flex-start;
+    color: $beige2;
+    gap: 48px;
+    max-width: 708px;
+    position: relative;
+    z-index: 100;
+  }
+
+  .title h2 {
+    font-size: 48px;
+  }
+
+  .desc {
+    p {
+      font-size: 18px;
+      font-weight: 600;
+
+      &:not(:first-child) {
+        margin-top: 32px;
+      }
+    }
+  }
+
+}

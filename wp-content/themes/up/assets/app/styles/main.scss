@@ -29,10 +29,16 @@ body {
 @import 'config/utils';
 
 // Components
+@import 'components/btn';
 @import 'components/container';
 @import 'components/icons';
 @import 'components/menu-icon';
+@import 'components/player';
 @import 'components/slider';
+@import 'components/typography';
+@import 'components/hamburger';
+@import 'components/breadcrumbs';
+@import 'components/wp-block';
 
 
 // Base
@@ -43,4 +49,6 @@ body {
 
 // Partials
 @import "partials/home/index";
+@import "partials/news";
+
 

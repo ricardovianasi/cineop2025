@@ -1,0 +1,22 @@
+%btn {
+  align-items: center;
+  border-radius: 12px;
+  display: inline-flex;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 140%;
+  padding: 8px 32px;
+  position: relative;
+  text-transform: uppercase;
+  transition: $transition-quick;
+}
+
+.btn-red {
+  @extend %btn;
+  background-color: $red2;
+  color: $beige2;
+
+  &:hover {
+    background-color: $red1;
+  }
+}

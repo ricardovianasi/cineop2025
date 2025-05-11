@@ -1,3 +1,25 @@
 .home {
-  @import 'partials/home/banner';
+  @import 'banner';
+  @import "intro";
+  @import "tv";
+  @import 'news';
+  @import 'gallery';
+
+  .home-title {
+    @extend .h1;
+    margin-bottom: 80px;
+  }
+
+  .communication {
+    background: $black;
+
+    .home-title {
+      color: $white;
+      margin-left: 110px;
+
+      @include media('<=768px') {
+        margin-left: 0;
+      }
+    }
+  }
 }

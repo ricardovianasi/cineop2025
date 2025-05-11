@@ -1,0 +1,23 @@
+.news {
+  display: flex;
+  flex-direction: column;
+  padding: 100px 0;
+
+  @include media('<=768px') {
+    padding: 48px 0;
+  }
+
+  &-item {
+    .title, .heading {
+      color: $white;
+    }
+  }
+
+  &-wrapper {
+    margin-bottom: 56px;
+  }
+
+  .read-more {
+    align-self: flex-end;
+  }
+}
