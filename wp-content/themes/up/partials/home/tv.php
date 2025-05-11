@@ -44,7 +44,7 @@ if ($homeTvItemsRendered): ?>
         ?></div>
       <div class="right">
         <?php echo implode('', $homeTvItemsRendered); ?>
-        <a class="btn orange" rel="noopener" target="_blank"
+        <a class="btn-red" rel="noopener" target="_blank"
            href="http://www.youtube.com/user/universoproducao?sub_confirmation=1">
           <?php echo $homeBtnLabel ?></a>
       </div>

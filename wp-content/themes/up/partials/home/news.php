@@ -28,7 +28,7 @@ if($homeNewsItems): ?>
     </div>
     <div class="read-more">
 	  <?php if($up_home_news['up_home_news_link']): ?>
-      <a class="btn orange" href="<?php echo $up_home_news['up_home_news_link'] ?>">
+      <a class="btn-red" href="<?php echo $up_home_news['up_home_news_link'] ?>">
         <?php echo !empty($up_home_news['up_home_news_link_text'])
               ? $up_home_news['up_home_news_link_text']
               : __('Veja todas as notícia') ?></a>

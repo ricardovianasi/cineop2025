@@ -7,7 +7,7 @@ $bannerItems = get_posts([
 
 if ($bannerItems): ?>
   <div class="banner">
-    <div class="container">
+    <div class="container container-medium">
       <div class="banner-slider">
         <div class="swiper">
           <div class="swiper-wrapper">
@@ -40,15 +40,17 @@ if ($bannerItems): ?>
           </div>
         </div>
         <?php if (count($bannerItems) > 1): ?>
-          <div class="slider-navigation">
-            <button class="slider-button-prev">
-              <i class="icon-arrow-left-2"></i>
-            </button>
-            <button class="slider-button-next">
-              <i class="icon-arrow-right-2"></i>
-            </button>
+          <div class="slider-controls">
+            <div class="slider-navigation">
+              <button class="slider-button-prev">
+                <i class="icon-arrow-left-2"></i>
+              </button>
+              <button class="slider-button-next">
+                <i class="icon-arrow-right-2"></i>
+              </button>
+            </div>
+            <div class="slider-pagination"></div>
           </div>
-          <div class="slider-pagination"></div>
         <?php endif; ?>
       </div>
     </div>
