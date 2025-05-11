@@ -1,7 +1,7 @@
 <div class="main-container container flex-col">
   <?php get_template_part('partials/heading', '', $args); ?>
     <div class="main-content">
-      <div class="container container-948 content flex-col">
+      <div class="container container-small content flex-col">
         <?php
         if(!empty($args['content-before'])) {
           echo $args['content-before'];
