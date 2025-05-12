@@ -4,7 +4,7 @@
     <div class="footer-logo">
       <div class="logo">
         <img src="<?php bloginfo('template_directory'); ?>/assets/dist/images/cineop.svg" alt="" />
-        <img src="<?php bloginfo('template_directory'); ?>/assets/dist/images/cineop-m.svg" alt="" />
+        <img src="<?php bloginfo('template_directory'); ?>/assets/dist/images/cineop-m.png" alt="" />
       </div>
       <a target="_blank" href="https://universoproducao.com.br">
         <span class="icon-up-full"></span>
@@ -88,7 +88,7 @@
       </div>
       <div class="address">
         <p>+ 55 31 3282-2366</p>
-        <p>CINOP@UNIVERSOPRODUCAO.COM.BR</p>
+        <p>CINEOP@UNIVERSOPRODUCAO.COM.BR</p>
         <p>
           RUA PIRAPETINGA, 567 - SERRA
           <br />
