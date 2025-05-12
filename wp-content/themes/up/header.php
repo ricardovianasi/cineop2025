@@ -81,7 +81,7 @@ $up_general_header_cta_url = $up_general_header_cta['url'] ?? false;
              src="<?php bloginfo('template_directory'); ?>/assets/dist/images/header-desktop.jpg"
              alt="19ª CineOP">
         <img class="mobile"
-             src="<?php bloginfo('template_directory'); ?>/assets/dist/images/header-desktop.jpg"
+             src="<?php bloginfo('template_directory'); ?>/assets/dist/images/header-mobile.jpg"
              alt="19ª CineOP">
       </a>
     </h1>
