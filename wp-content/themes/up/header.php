@@ -71,14 +71,14 @@ $up_general_header_cta_url = $up_general_header_cta['url'] ?? false;
 <body class="<?php echo implode(' ', $body_classes) ?>">
 <header class="header">
   <div class="top">
-    <h1>
+    <h1 title="CineOP 20ª Mostra de Cinema de Ouro Preto">
       <a href="/">
         <img class="desktop"
              src="<?php bloginfo('template_directory'); ?>/assets/dist/images/header-desktop.jpg"
-             alt="19ª CineOP">
+             alt="20ª CineOP">
         <img class="mobile"
              src="<?php bloginfo('template_directory'); ?>/assets/dist/images/header-mobile.jpg"
-             alt="19ª CineOP">
+             alt="20ª CineOP">
       </a>
     </h1>
   </div>
