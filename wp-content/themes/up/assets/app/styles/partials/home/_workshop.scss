@@ -1,6 +1,10 @@
 .workshop {
   padding: 100px 0;
 
+  .home-title {
+    max-width: 470px;
+  }
+
   &-slider {
     display: flex;
     position: relative;
