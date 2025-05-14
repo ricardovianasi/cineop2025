@@ -25,6 +25,12 @@
       width: 24px;
     }
   }
+
+  &.blue {
+    .swiper-pagination-bullet {
+      background: #1E3764;
+    }
+  }
 }
 
 .slider-navigation {
@@ -45,6 +51,14 @@
 
     i {
       font-size: 19px;
+    }
+  }
+
+  &.blue {
+    .slider-button-prev,
+    .slider-button-next {
+      background: #1E3764;
+      color: #fff;
     }
   }
 

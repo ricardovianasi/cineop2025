@@ -235,12 +235,12 @@ class Formation
                 <?php endif; ?>
                 <div class="cta">
                   <?php if (!$block_readmore): ?>
-                    <a class="btn orange" href="<?php echo get_the_permalink($block) ?>">
+                    <a class="btn-red" href="<?php echo get_the_permalink($block) ?>">
                       <?php echo __('Saiba mais', 'up') ?></a>
                   <?php endif; ?>
                   <?php if (!empty($block_subscription) && $block_subscription['presentation_subscription_enabled']): ?>
                     <a target="_blank"
-                       class="btn link"
+                       class="btn-link"
                        href="<?php echo $block_subscription['presentation_subscription_link'] ?>">
                       <?php echo !empty($block_subscription['presentation_subscription_label'])
                         ? $block_subscription['presentation_subscription_label']
@@ -257,12 +257,12 @@ class Formation
               </div>
               <div class="cta">
                 <?php if (!$block_readmore): ?>
-                  <a class="btn orange" href="<?php echo get_the_permalink($block) ?>">
+                  <a class="btn-red" href="<?php echo get_the_permalink($block) ?>">
                     <?php echo __('Saiba mais', 'up') ?></a>
                 <?php endif; ?>
                 <?php if (!empty($block_subscription) && $block_subscription['presentation_subscription_enabled']): ?>
                   <a target="_blank"
-                     class="btn link"
+                     class="btn-link"
                      href="<?php echo $block_subscription['presentation_subscription_link'] ?>">
                     <?php echo !empty($block_subscription['presentation_subscription_label'])
                       ? $block_subscription['presentation_subscription_label']

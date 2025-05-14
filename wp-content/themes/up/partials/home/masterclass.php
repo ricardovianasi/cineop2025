@@ -30,10 +30,10 @@ if (!empty($home_training['up_home_training_enabled'])) {
   $masterclassDots = "";
   ?>
   <div class="workshop">
-    <div class="container flex-col">
+    <div class="container container-big flex-col">
       <h2 class="home-title"><?php echo $home_training_title ?></h2>
     </div>
-    <div class="container flex-col">
+    <div class="container container-big flex-col">
       <div class="workshop-slider">
         <div class="workshop-slider-main swiper">
           <div class="swiper-wrapper">
@@ -102,7 +102,7 @@ if (!empty($home_training['up_home_training_enabled'])) {
                       </span>
                     <?php endif; ?>
                   </div>
-                  <a class="btn orange" href="<?php echo get_the_permalink($item) ?>">Saiba Mais</a>
+                  <a class="btn-red" href="<?php echo get_the_permalink($item) ?>">Saiba Mais</a>
                 </div>
               </div>
             <?php endforeach; ?>
@@ -133,10 +133,18 @@ if (!empty($home_training['up_home_training_enabled'])) {
           </div>
         </div>
       </div>
-      <div class="workshop-controls">
-        <div class="slider-pagination"></div>
+      <div class="workshop-controls slider-controls">
+        <div class="slider-navigation blue">
+          <button class="slider-button-prev">
+            <i class="icon-arrow-left-2"></i>
+          </button>
+          <button class="slider-button-next">
+            <i class="icon-arrow-right-2"></i>
+          </button>
+        </div>
+        <div class="slider-pagination blue"></div>
         <?php if ($home_training_link_url): ?>
-          <a class="btn orange"
+          <a class="btn-blue"
              href="<?php echo $home_training_link_url ?>"><?php echo $home_training_link_label ?></a>
         <?php endif; ?>
       </div>

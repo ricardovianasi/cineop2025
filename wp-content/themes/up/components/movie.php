@@ -282,10 +282,10 @@ class Movie
             <span class="country on-hover"><?php echo implode( ' / ', $estadoPais ); ?></span>
           <?php endif; ?>
           <?php if ($movie_player_obj->isPlayerOpen()): ?>
-            <span class="read-more btn link on-hover uppercase">
+            <span class="read-more btn-link on-hover uppercase">
               <?php echo __('Assista', 'up') ?> <i class="icon-arrow-right"></i></span>
           <?php else: ?>
-            <span class="read-more btn link on-hover uppercase">
+            <span class="read-more btn-link on-hover uppercase">
               <?php echo __('Saiba mais', 'up') ?> <i class="icon-arrow-right"></i></span>
           <?php endif; ?>
         </span>
@@ -392,7 +392,7 @@ class Movie
               </select>
             </div>
             <div class="col">
-              <button class="btn orange" type="submit"><?php echo __('Buscar', 'up')?></button>
+              <button class="btn-red" type="submit"><?php echo __('Buscar', 'up')?></button>
             </div>
           </div>
         </form>

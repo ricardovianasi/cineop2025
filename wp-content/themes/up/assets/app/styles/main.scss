@@ -39,6 +39,7 @@ body {
 @import 'components/hamburger';
 @import 'components/breadcrumbs';
 @import 'components/wp-block';
+@import 'components/tag';
 
 
 // Base
@@ -50,5 +51,8 @@ body {
 // Partials
 @import "partials/home/index";
 @import "partials/news";
+@import 'partials/movie';
+@import 'partials/movie-details';
+@import 'partials/formation';
 
 

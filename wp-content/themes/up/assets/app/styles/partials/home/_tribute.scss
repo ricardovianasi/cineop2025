@@ -1,0 +1,84 @@
+.tribute {
+  background: $black;
+  display: flex;
+  padding-bottom: 80px;
+  position: relative;
+
+  &-wrapper {
+    display: flex;
+    position: relative;
+    height: 495px;
+
+    &::before {
+      background-image: url('../images/tribute-id.png');
+      background-size: cover;
+      bottom: 0;
+      content: '';
+      height: 100%;
+      position: absolute;
+      right: 0;
+      width: 40%;
+      z-index: 10;
+    }
+
+    &::after {
+      background-color: $black;
+      content: '';
+      height: 100%;
+      position: absolute;
+      width: 60%;
+      top: 0;
+      left: 0;
+      clip-path: polygon(0% 100%, 100% 100%, 0% 0);
+    }
+  }
+
+  figure {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &-content {
+    align-items: flex-start;
+    justify-content: flex-end;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: 400px;
+    position: relative;
+    z-index: 10;
+
+
+
+    &-wrapper {
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      position: relative;
+      max-width: 318px;
+
+      h3,
+      p {
+        color: #fff;
+      }
+    }
+
+    h2 {
+      color: #e3862e;
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 140%;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+      transform: translateX(-48px);
+    }
+  }
+}

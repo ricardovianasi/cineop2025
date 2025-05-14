@@ -1,0 +1,197 @@
+.workshop {
+  padding: 100px 0;
+
+  &-slider {
+    display: flex;
+    position: relative;
+
+    @include media('<=768px') {
+      margin-top: 40px;
+    }
+  }
+
+  &-slider-main {
+    background-color: #fff;
+    padding-right: 60px;
+    position: relative;
+    width: 80%;
+    z-index: 100;
+
+    @include media('<=768px') {
+      padding-right: 0;
+      width: 100%;
+    }
+  }
+
+  &-item {
+    background-color: #fff;
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+
+    @include media('<=768px') {
+      gap: 16px;
+    }
+
+    &:not(.swiper-slide-active) {
+      opacity: 0;
+    }
+
+    figure {
+      @include media('<=768px') {
+        width: 50% !important;
+      }
+    }
+
+    .btn {
+      @include media('<=768px') {
+        justify-content: center;
+        width: 100%;
+      }
+    }
+  }
+
+  &-desc {
+    align-items: flex-start;
+    background-color: #AE8A9380;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 16px;
+
+    @include media('<=768px') {
+      gap: 8px;
+      width: 50%;
+    }
+
+    .title {
+      color: #CF0706;
+      font-weight: 600;
+      font-size: 28px;
+      letter-spacing: 0.02em;
+      line-height: 150%;
+
+      @include media('<=768px') {
+        font-size: 14px;
+      }
+    }
+  }
+
+  figure,
+  img,
+  &-desc-wrapper {
+  }
+
+  &-desc-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+    color: #313131;
+
+    @include media('<=768px') {
+      padding: 8px 8px 24px 8px;
+    }
+
+    span {
+      align-items: center;
+      display: flex;
+      gap: 12px;
+
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 140%;
+      text-transform: uppercase;
+
+
+      @include media('<=768px') {
+        gap: 6px;
+        font-size: 10px;
+      }
+    }
+  }
+
+  figure {
+    height: 100%;
+    position: relative;
+    width: 100%;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  &-thumbs {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    justify-content: space-between;
+    min-height: auto;
+    width: 20%;
+    gap: 48px;
+    //padding-top: 100px;
+
+    @include media('<=768px') {
+      display: none;
+    }
+
+    .swiper {
+      width: 100%;
+      max-width: 100%;
+      max-height: 100vh;
+      // CSS Grid/Flexbox bug size workaround
+      // @see https://github.com/kenwheeler/slick/issues/982
+      min-height: 0;
+      min-width: 0;
+      overflow: visible;
+    }
+
+    .swiper-slide {
+      position: relative;
+
+      &::before {
+        background: #CF0706;
+        background-blend-mode: multiply;
+        opacity: .4;
+        content: "";
+        left: 0;
+        height: 100%;
+        top: 0;
+        width: 100%;
+        position: absolute;
+      }
+    }
+
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .slider-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  &-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 113px;
+
+    @include media('<=768px') {
+      align-items: center;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 48px;
+    }
+
+    .slider-pagination {
+      width: auto;
+    }
+  }
+}
+

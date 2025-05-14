@@ -1,7 +1,11 @@
 .home {
   @import 'banner';
-  @import "intro";
-  @import "tv";
+  @import 'intro';
+  @import 'thematic';
+  @import 'category';
+  @import 'tribute';
+  @import 'workshop';
+  @import 'tv';
   @import 'news';
   @import 'gallery';
 
@@ -10,16 +14,29 @@
     margin-bottom: 80px;
   }
 
-  .communication {
-    background: $black;
-
+  .communication,
+  .thematic,
+  .category,
+  .workshop{
     .home-title {
-      color: $white;
       margin-left: 110px;
+      letter-spacing: 0.01em;
 
       @include media('<=768px') {
         margin-left: 0;
       }
     }
+  }
+
+  .communication,
+  .thematic,
+  .category {
+    .home-title {
+      color: $white;
+    }
+  }
+
+  .communication {
+    background: $black;
   }
 }

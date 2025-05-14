@@ -3,7 +3,7 @@
   border-radius: 12px;
   display: inline-flex;
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 700;
   line-height: 140%;
   padding: 8px 32px;
   position: relative;
@@ -14,9 +14,47 @@
 .btn-red {
   @extend %btn;
   background-color: $red2;
-  color: $beige2;
+  color: #F6F3EB;
 
   &:hover {
     background-color: $red1;
+  }
+}
+
+.btn-white {
+  @extend %btn;
+  background-color: $white;
+  color: $blue2;
+
+  &:hover {
+    background-color: $purple;
+  }
+}
+
+.btn-blue {
+  @extend %btn;
+  background-color: $blue1;
+  color: #F6F3EB;
+
+  &:hover {
+    background-color: #2C2E35;
+  }
+}
+
+.btn-link {
+  @extend %btn;
+  background-color: $white;
+  font-weight: 700;
+  gap: 8px;
+
+  i {
+    font-size: 12px;
+    transition: $transition-quick;
+  }
+
+  &:hover {
+    i {
+      transform: translateX(6px);
+    }
   }
 }

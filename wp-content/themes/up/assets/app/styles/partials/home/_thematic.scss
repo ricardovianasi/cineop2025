@@ -1,0 +1,142 @@
+.thematic {
+  background: $black;
+  padding-top: 200px;
+  padding-bottom: 100px;
+  position: relative;
+
+  h2 {
+    position: relative;
+
+    @include media('<=768px') {
+      padding-left: 0;
+    }
+  }
+
+  &-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+
+    @include media('<=768px') {
+      grid-template-columns: 1fr;
+      padding-top: 72px;
+    }
+  }
+
+  &-item {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    &:nth-child(1) {
+      h3 {
+        color: $red1;
+      }
+
+      figure {
+        &::before {
+          background-color: $red1;
+        }
+
+        svg {
+          fill: $red1;
+        }
+      }
+    }
+
+    &:nth-child(2) {
+      h3 {
+        color: $orange;
+      }
+
+      figure {
+        &::before {
+          background-color: $orange;
+        }
+
+        svg {
+          fill: $orange;
+        }
+      }
+    }
+
+    &:nth-child(3) {
+      h3 {
+        color: $yellow;
+      }
+
+      figure {
+        &::before {
+          background-color: $yellow;
+        }
+
+        svg {
+          fill: $yellow;
+        }
+      }
+    }
+
+    figure {
+      position: relative;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+      }
+
+      &::before {
+        height: 100%;
+        left: 0;
+        opacity: .32;
+        top: 0;
+        width: 100%;
+      }
+    }
+
+    svg {
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      width: 100%;
+    }
+
+    img {
+      height: 260px;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  &-desc {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin-top: 32px;
+    gap: 68px;
+    height: 100%;
+
+    h3 {
+      font-weight: 700;
+      font-size: 26px;
+      line-height: 140%;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    p {
+      color: #f6f3eb;
+      font-size: 20px;
+      line-height: 150%;
+    }
+
+    .button {
+      max-width: calc(100% - 100px);
+
+      @include media('<=1024px') {
+        max-width: 100%;
+      }
+    }
+  }
+}

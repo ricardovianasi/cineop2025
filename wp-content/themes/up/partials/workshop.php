@@ -87,6 +87,12 @@ get_header(); ?>
               </div>
             </div>
           </div>
+          <div class="formation-id">
+            <svg viewBox="0 0 1920 184" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1920 0L0 93V120.5L1920 160.5L1920 0Z" fill="#CC5A39" fill-opacity="0.5"/>
+              <path d="M1920 98L0 112.5V120L1920 183.5L1920 98Z" fill="#83AD74" fill-opacity="0.3"/>
+            </svg>
+          </div>
         </div>
         <div class="">
           <div class="id" aria-hidden="true">
