@@ -19,11 +19,11 @@
  * @package WordPress
  */
 
-//$_SERVER['HTTPS']='on';
+$_SERVER['HTTPS']='on';
 
-define('WP_HOME','http://167.172.252.128/');
-define('WP_SITEURL','http://167.172.252.128/');
-//define('RELOCATE',true);
+define('WP_HOME','https://cineop.com.br/');
+define('WP_SITEURL','https://cineop.com.br/');
+define('RELOCATE',true);
 
 define( 'AS3CF_SETTINGS', serialize( array(
     'provider' => 'do',

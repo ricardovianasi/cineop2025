@@ -3,6 +3,23 @@
   position: relative;
   padding: 100px 0;
 
+  .desktop {
+    display: flex;
+
+    @include media('<=768px') {
+      display: none;
+    }
+  }
+
+  .mobile {
+    display: none;
+
+
+    @include media('<=768px') {
+      display: flex;
+    }
+  }
+
   &-slider {
     position: relative;
 
