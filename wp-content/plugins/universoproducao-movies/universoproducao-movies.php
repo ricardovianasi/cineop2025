@@ -136,7 +136,7 @@ function UPMovies_management_page()
     
     
     //Selecionar os filmes
-    $movieFile = fopen(WP_CONTENT_DIR . '/csv/movie1.csv', 'r');
+    $movieFile = fopen(WP_CONTENT_DIR . '/csv/movie2.csv', 'r');
     $cont = 0;
     while (($movie = fgetcsv($movieFile, 1000, ",")) !== false) {
       
