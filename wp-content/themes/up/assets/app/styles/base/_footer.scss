@@ -3,19 +3,36 @@
   color: $white;
   position: relative;
 
+  @include media('<=768px') {
+    padding-top: 48px;
+  }
+
   &::before {
-    background-image: url("../images/footer.png");
+    background-image: url('../images/footer.png');
     background-repeat: no-repeat;
     content: '';
     height: 100%;
     position: absolute;
     width: 100%;
+
+    @include media('<=768px') {
+      background-image: url('../images/footer-mobile.png');
+      background-size: cover;
+      background-position: center center;
+      height: 150px;
+      top: 0;
+    }
   }
 
   .container {
     display: grid;
     grid-template-columns: auto auto;
     justify-content: space-between;
+
+    @include media('<=768px') {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   &-logo {
@@ -24,26 +41,48 @@
     gap: 32px;
     padding: 180px 0 120px 0;
 
+    @include media('<=768px') {
+      padding: 0;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
     .logo {
       display: flex;
       flex-direction: column;
       gap: 20px;
+
+      @include media('<=768px') {
+        gap: 8px;
+      }
 
       img {
         width: 100%;
 
         &:first-child {
           max-width: 458px;
+
+          @include media('<=768px') {
+            max-width: 148px;
+          }
         }
 
         &:last-child {
           max-width: 250px;
+
+          @include media('<=768px') {
+            max-width: 112px;
+          }
         }
       }
     }
 
     .icon-up-full {
       font-size: 84px;
+
+      @include media('<=768px') {
+        font-size: 30px;
+      }
     }
   }
 
@@ -52,6 +91,12 @@
     flex-direction: column;
     justify-content: space-between;
     margin-top: 93px;
+
+    @include media('<=768px') {
+      margin-top: 36px;
+      gap: 50px;
+      flex-direction: column-reverse;
+    }
 
     .social {
       strong {
@@ -65,6 +110,10 @@
         gap: 24px;
         font-size: 28px;
         margin-top: 16px;
+
+        @include media('<=768px') {
+          gap: 16px;
+        }
       }
     }
 
@@ -72,6 +121,10 @@
       display: flex;
       flex-direction: column;
       gap: 22px;
+
+      @include media('<=768px') {
+        gap: 12px;
+      }
     }
   }
 

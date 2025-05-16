@@ -1,0 +1,16 @@
+.id {
+
+  &.mobile {
+    @include media('<=768px') {
+      display: block;
+    }
+
+    @include media('>768px') {
+      display: none;
+    }
+  }
+
+  &.full {
+    @include expand;
+  }
+}

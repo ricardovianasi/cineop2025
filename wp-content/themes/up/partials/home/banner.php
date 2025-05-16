@@ -54,5 +54,11 @@ if ($bannerItems): ?>
         <?php endif; ?>
       </div>
     </div>
+    <div class="mobile">
+      <svg width="360" height="47" viewBox="0 0 360 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path opacity="0.7" d="M0.5 8.67256L360 26.3323L0.5 47V8.67256Z" fill="#B22E29"/>
+        <path d="M0.5 -2.09808e-05L360 26.6603L0.5 31.5812V-2.09808e-05Z" fill="#CC5A39" fill-opacity="0.6"/>
+      </svg>
+    </div>
   </div>
 <?php endif;

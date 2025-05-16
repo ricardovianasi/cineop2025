@@ -50,4 +50,10 @@ if ($homeTvItemsRendered): ?>
       </div>
     </div>
   </div>
+  <div class="id mobile full">
+    <svg width="360" height="47" viewBox="0 0 360 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path opacity="0.7" d="M0.5 8.67256L360 26.3323L0.5 47V8.67256Z" fill="#5A6592"/>
+      <path d="M0.5 -0.000143051L360 26.6602L0.5 31.5811V-0.000143051Z" fill="#83AD74" fill-opacity="0.5"/>
+    </svg>
+  </div>
 <?php endif;

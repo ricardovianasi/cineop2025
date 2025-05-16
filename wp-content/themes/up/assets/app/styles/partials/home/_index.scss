@@ -9,9 +9,19 @@
   @import 'news';
   @import 'gallery';
 
+  .main {
+    @include media('<=768px') {
+      margin: 0 0 40px 0;
+    }
+  }
+
   .home-title {
     @extend .h1;
     margin-bottom: 80px;
+
+    @include media('<=768px') {
+      margin-bottom: 32px;
+    }
   }
 
   .communication,

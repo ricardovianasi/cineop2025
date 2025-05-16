@@ -3,29 +3,30 @@
   align-items: center;
   cursor: pointer;
   display: flex;
-  height: 48px;
+  height: 32px;
   justify-content: center;
   margin-left: auto;
   position: relative;
-  width: 48px;
+  width: 32px;
   z-index: 1000000;
+  background-color: white;
+  border-radius: 100%;
 
   .wrapper {
-    height: 22px;
+    height: 14px;
     position: relative;
-    width: 30px;
+    width: 14px;
 
     span {
-      background: #fff;
+      background: #0F2A5D;
       display: block;
-      height: 3px;
+      height: 2px;
       opacity: 1;
       position: absolute;
       right: 0;
       width: 100%;
       transform: rotate(0deg);
       transition: 0.25s ease-in-out;
-      border-radius: 7px;
 
       &:nth-child(1) {
         top: 0;
@@ -33,11 +34,11 @@
 
       &:nth-child(2),
       &:nth-child(3) {
-        top: 8px;
+        top: 6px;
       }
 
       &:nth-child(3) {
-        top: 16px;
+        top: 12px;
       }
     }
   }
@@ -47,7 +48,7 @@
   .hamburger {
     .wrapper {
       span {
-        background: #fff;
+        background: #0F2A5D;
 
         &:nth-child(1) {
           width: 0%;
@@ -64,11 +65,11 @@
           -moz-transform: rotate(-45deg);
           -o-transform: rotate(-45deg);
           transform: rotate(-45deg);
-          top: 8px;
+          top: 6px;
         }
 
         &:nth-child(4) {
-          top: 16px;
+          top: 12px;
           width: 0%;
           left: 50%;
         }

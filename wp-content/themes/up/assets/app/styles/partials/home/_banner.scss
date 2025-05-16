@@ -3,6 +3,10 @@
   position: relative;
   padding: 100px 0;
 
+  @include media('<=768px') {
+    padding: 20px 0;
+  }
+
   .desktop {
     display: flex;
 
@@ -62,5 +66,10 @@
     position: absolute;
     width: 100%;
     z-index: 1000;
+
+    @include media('<=768px') {
+      adding: 12px 0 0;
+      position: relative;
+    }
   }
 }

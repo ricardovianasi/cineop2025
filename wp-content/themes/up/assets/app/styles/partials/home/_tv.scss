@@ -1,6 +1,10 @@
 .tv {
   padding: 100px 0;
 
+  @include media('<=768px') {
+    padding: 40px 0;
+  }
+
   &-wrapper {
     margin-top: 24px;
     column-gap: 24px;
@@ -114,5 +118,9 @@
     justify-content: center;
     text-align: center;
     width: 100%;
+
+    @include media('<=768px') {
+      grid-column: 1 / span 2;
+    }
   }
 }
