@@ -1,0 +1,142 @@
+.timeline {
+  color: #fff;
+  padding-bottom: 80px;
+  padding-top: 80px;
+
+  @include media('<=768px') {
+    padding-bottom: 40px;
+    padding-top: 40px;
+  }
+
+  .home-title {
+    margin-left: 0 !important;
+  }
+
+  &-items {
+
+    @include media('<=768px') {
+      margin-top: 32px;
+    }
+  }
+
+  &-item {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+    gap: 32px;
+
+    @include media('<=768px') {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+
+    > :nth-child(1) {
+      @include media('>768px') {
+        grid-column: 1 / span 2;
+        grid-row: 1 / span 2;
+      }
+
+      @include media('<=768px') {
+        order: 1;
+      }
+    }
+
+    > :nth-child(2) {
+      @include media('>768px') {
+        grid-column: 3 / span 4;
+      }
+
+      @include media('<=768px') {
+        order: 0;
+      }
+    }
+
+    > :nth-child(3),
+    > :nth-child(4) {
+      @include media('<=768px') {
+        display: none;
+      }
+    }
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    h3 {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      @include media('<=768px') {
+        gap: 0;
+      }
+
+      .slogan {
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 140%; /* 33.6px */
+        letter-spacing: 1.92px;
+
+        @include media('<=768px') {
+          font-size: 16px;
+        }
+      }
+
+      .date {
+        color: #fff;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 140%; /* 67.2px */
+
+        @include media('<=768px') {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+
+  &-years {
+    margin-top: 16px;
+
+    .swiper-slide {
+      background-color: #2C2E35;
+      color: #C5B58F;
+      cursor: pointer;
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 120%; /* 38.4px */
+      padding: 12px;
+      text-align: center;
+
+      @include media('<=768px') {
+        font-size: 24px;
+      }
+
+      &.swiper-slide-thumb-active {
+        //background-color: $orange2;
+        //border-color: $orange2;
+      }
+    }
+  }
+
+  .slider-controls {
+    margin-top: 80px;
+
+    @include media('<=768px') {
+      flex-direction: column;
+      margin-top: 32px;
+      gap: 24px;
+    }
+
+    .slider-pagination {
+      @include media('<=768px') {
+        display: none;
+      }
+    }
+  }
+}

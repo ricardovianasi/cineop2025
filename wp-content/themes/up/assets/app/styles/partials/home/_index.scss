@@ -4,10 +4,13 @@
   @import 'thematic';
   @import 'category';
   @import 'tribute';
+  @import 'debate';
   @import 'workshop';
+  @import 'art';
   @import 'tv';
   @import 'news';
   @import 'gallery';
+  @import 'timeline';
 
   .main {
     @include media('<=768px') {
@@ -27,7 +30,8 @@
   .communication,
   .thematic,
   .category,
-  .workshop{
+  .workshop,
+  .debate {
     .home-title {
       margin-left: 110px;
       letter-spacing: 0.01em;

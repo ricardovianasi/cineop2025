@@ -59,6 +59,10 @@
     .slider-button-next {
       background: #1E3764;
       color: #fff;
+
+      &.swiper-button-disabled {
+        opacity: 0.5;
+      }
     }
   }
 

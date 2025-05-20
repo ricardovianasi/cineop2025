@@ -15,7 +15,7 @@ if (!empty($up_home_timeline['up_home_timeline_enabled'])) {
   ?>
 
   <div class="timeline">
-    <div class="container container-1216 flex-col">
+    <div class="container container-medium flex-col">
       <h2 class="home-title"><?php echo $up_home_timeline_title ?></h2>
       <div class="timeline-items">
         <div class="swiper">
@@ -54,20 +54,18 @@ if (!empty($up_home_timeline['up_home_timeline_enabled'])) {
           </div>
         </div>
       </div>
-    </div>
-    <div class="container container-1216 flex-col">
-      <div class="flex flex-col md:flex-row items-center justify-between gap-4 controls">
-        <div class="slider-controls dark">
+      <div class="slider-controls">
+        <div class="slider-navigation">
           <button class="slider-button-prev">
-            <i class="icon-arrow-left"></i>
+            <i class="icon-arrow-left-2"></i>
           </button>
-          <div class="slider-pagination"></div>
           <button class="slider-button-next">
-            <i class="icon-arrow-right"></i>
+            <i class="icon-arrow-right-2"></i>
           </button>
         </div>
+        <div class="slider-pagination"></div>
         <?php if ($up_home_timeline_link): ?>
-          <a class="btn orange" href="<?php echo $up_home_timeline_link ?>">
+          <a class="btn-red" href="<?php echo $up_home_timeline_link ?>">
             <?php echo __('Ver exposição completa', 'up') ?></a>
         <?php endif; ?>
       </div>

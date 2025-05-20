@@ -155,9 +155,9 @@ $(document).ready(() => {
   });
 
   const debate = new Swiper('.home .debate .swiper', {
-    slidesPerView: 'auto',
+    slidesPerView: 1,
     spaceBetween: 24,
-    loop: true,
+    loop: false,
     pagination: {
       el: '.home .debate .slider-pagination',
       type: 'bullets',
@@ -187,7 +187,7 @@ $(document).ready(() => {
   const artThumb = new Swiper('.art-thumb .swiper', {
     navigation: false,
     pagination: false,
-    slidesPerView: 3,
+    slidesPerView: 2,
     spaceBetween: 12,
     loop: false,
     allowTouchMove: false,

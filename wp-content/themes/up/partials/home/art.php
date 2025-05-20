@@ -25,6 +25,7 @@ if (!empty($home_art['up_home_art_enabled'])) {
     $item_image_home = get_field('presentation_image_home', $art);
     $item_image = $item_image_home['ID'] ?? $item_image_list['ID'];
 
+
     $item_date = get_field('presentation_date', $art);
     $item_hour = get_field('presentation_hour', $art);
     $item_subtitle = get_field('presentation_subtitle', $art);
@@ -87,6 +88,9 @@ if (!empty($home_art['up_home_art_enabled'])) {
                   $item_place = get_the_terms($art->ID, 'cat_place');
                   $item_place = $item_place ? join(', ', wp_list_pluck($item_place, 'name')) : '';
 
+                  $item_start_date_time = get_field('presentation_start_date_time', $art);
+                  $start_date_time = DateTime::createFromFormat('d/m', $item_start_date_time);
+
                   $place_hour = [];
                   if (!empty($item_place)) {
                     $place_hour[] = $item_place;
@@ -100,6 +104,9 @@ if (!empty($home_art['up_home_art_enabled'])) {
                     <?php if ($item_image): ?>
                       <figure>
                         <?php echo wp_get_attachment_image($item_image, 'art') ?>
+                        <?php if ($start_date_time): ?>
+                          <span class="date"><?php echo $start_date_time ?></span>
+                        <?php endif; ?>
                       </figure>
                     <?php endif; ?>
                     <div class="desc">
@@ -128,34 +135,37 @@ if (!empty($home_art['up_home_art_enabled'])) {
                   $item_image_list = get_field('presentation_image', $art);
                   $item_image_home = get_field('presentation_image_home', $art);
                   $item_image = $item_image_home['ID'] ?? $item_image_list['ID'];
+                  $item_start_date_time = get_field('presentation_start_date_time', $art);
+                  $start_date_time = DateTime::createFromFormat('d/m', $item_start_date_time);
                   ?>
                   <div class="swiper-slide">
                     <?php if ($item_image): ?>
                       <figure>
                         <?php echo wp_get_attachment_image($item_image, 'art') ?>
+                        <?php if ($start_date_time): ?>
+                          <span class="date"><?php echo $start_date_time ?></span>
+                        <?php endif; ?>
                       </figure>
                     <?php endif; ?>
                   </div>
                 <?php endforeach; ?>
               </div>
             </div>
-            <div class="slider-controls">
-              <div class="slider-pagination"></div>
-              <div class="slider-navigation">
-                <button class="slider-button-prev">
-                  <i class="icon-arrow-left-2"></i>
-                </button>
-                <button class="slider-button-next">
-                  <i class="icon-arrow-right-2"></i>
-                </button>
-              </div>
-            </div>
-            <?php if ($home_art_link_url): ?>
-              <div class="text-right">
-                <a class="btn orange" href="<?php echo $home_art_link_url ?>"><?php echo $home_art_link_label ?></a>
-              </div>
-            <?php endif; ?>
           </div>
+        </div>
+        <div class="art-controls slider-controls">
+          <div class="slider-navigation blue">
+            <button class="slider-button-prev">
+              <i class="icon-arrow-left-2"></i>
+            </button>
+            <button class="slider-button-next">
+              <i class="icon-arrow-right-2"></i>
+            </button>
+          </div>
+          <div class="slider-pagination blue"></div>
+          <?php if ($home_art_link_url): ?>
+            <a class="btn-blue" href="<?php echo $home_art_link_url ?>"><?php echo $home_art_link_label ?></a>
+          <?php endif; ?>
         </div>
 
       </div>

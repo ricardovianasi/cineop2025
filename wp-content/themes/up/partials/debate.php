@@ -59,7 +59,7 @@ get_header(); ?>
     <div class="debate-single">
       <?php if ($block_image_grid): ?>
       <div class="expanded">
-        <div class="container big justify-center">
+        <div class="container container-big justify-center">
           <div class="img-grid">
           <?php $cont=0; foreach ($block_image_grid as  $key => $img) {
             $cont++;
@@ -76,7 +76,7 @@ get_header(); ?>
           <?php echo wp_get_attachment_image($activity_image_banner, 'hero_banner') ?>
         </figure>
       <?php endif; ?>
-      <div class="container content">
+      <div class="container container-small content">
         <div class="desc">
           <div class="title">
             <?php if ($activity_tag): ?>
