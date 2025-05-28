@@ -31,12 +31,13 @@ $cat_place_terms = get_the_terms($post->ID, 'cat_place');
 $block_place = join(', ', wp_list_pluck($cat_place_terms, 'name'));
 
 get_header(); ?>
-  <div class="main-container container container-1216 flex-col">
+  <div class="main-container container container-medium flex-col">
     <?php get_template_part('partials/heading', '', $args); ?>
     <div class="main-content">
-      <div class="formation-single">
+      <div class="container container-medium content flex-col">
+        <div class="formation-single">
         <div class="expanded">
-          <div class="container">
+          <div class="container container-medium">
             <div class="details">
               <?php if ($activity_guest): ?>
                 <div class="left">
@@ -53,6 +54,11 @@ get_header(); ?>
                     <div class="tag white"><?php echo $activity_tag; ?></div>
                   </div>
                 <?php endif; ?>
+
+                <div class="title">
+                  <?php if ($guest_name): ?><h3><?php echo $guest_name ?></h3><?php endif; ?>
+                  <?php if ($guest_country): ?><span><?php echo $guest_country ?></span><?php endif; ?>
+                </div>
 
                 <?php if ($activity_date || $activity_workload || $activity_vacancies || $activity_age_range): ?>
                   <div class="info">
@@ -72,7 +78,7 @@ get_header(); ?>
                 <?php endif; ?>
                 <?php if (!empty($activity_subscription) && $activity_subscription['presentation_subscription_enabled']): ?>
                   <a target="_blank"
-                     class="btn orange"
+                     class="btn-red"
                      href="<?php echo $activity_subscription['presentation_subscription_link'] ?>">
                     <?php echo !empty($activity_subscription['presentation_subscription_label'])
                       ? $activity_subscription['presentation_subscription_label']
@@ -81,10 +87,7 @@ get_header(); ?>
                   </a>
                 <?php endif; ?>
               </div>
-              <div class="title">
-                <?php if ($guest_name): ?><h3><?php echo $guest_name ?></h3><?php endif; ?>
-                <?php if ($guest_country): ?><span><?php echo $guest_country ?></span><?php endif; ?>
-              </div>
+
             </div>
           </div>
           <div class="formation-id">
@@ -103,7 +106,7 @@ get_header(); ?>
             <div></div>
           </div>
           <div class="sections">
-            <div class="container container-948">
+            <div class="container container-small">
               <div class="section">
                 <h4 class="uppercase">Objetivo</h4>
                 <div>
@@ -129,6 +132,7 @@ get_header(); ?>
             </div>
           </div>
         </div>
+      </div>
       </div>
     </div>
   </div>
