@@ -152,7 +152,7 @@ if (!empty($ano)) {
               <?php if (!empty($tags)): ?>
                 <p class="tags">
                   <?php foreach ($tags as $tag): ?>
-                    <span class="tag green"><?php echo $tag ?></span>
+                    <span class="tag black"><?php echo $tag ?></span>
                   <?php endforeach; ?>
                 </p>
               <?php endif; ?>
