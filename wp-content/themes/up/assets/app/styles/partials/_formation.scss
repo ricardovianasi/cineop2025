@@ -35,7 +35,7 @@
       }
 
       img {
-        border-radius: 8px;
+
         aspect-ratio: 1 / 1;
         object-fit: cover;
         z-index: 100;
@@ -43,7 +43,7 @@
     }
 
     figure {
-      border-radius: 8px;
+
       height: 100%;
       position: relative;
       width: 40%;
@@ -65,7 +65,7 @@
 
       img {
         width: 100%;
-        border-radius: 8px;
+
         z-index: 100;
         position: relative;
       }
@@ -157,12 +157,12 @@
         max-height: 290px;
         height: 100%;
         object-fit: cover;
-        border-radius: 8px;
+
       }
 
       .title {
         background-color: #000;
-        border-radius: 8px;
+
         color: #fff;
         grid-column: 1 / span 2;
         order: 1;
@@ -373,7 +373,7 @@
         }
 
         img {
-          border-radius: 8px;
+
         }
       }
 
