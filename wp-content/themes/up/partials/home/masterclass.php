@@ -109,14 +109,6 @@ if (!empty($home_training['up_home_training_enabled'])) {
           </div>
         </div>
         <div class="workshop-thumbs">
-          <div class="slider-navigation">
-            <button class="slider-button-prev">
-              <i class="icon-arrow-left-2"></i>
-            </button>
-            <button class="slider-button-next">
-              <i class="icon-arrow-right-2"></i>
-            </button>
-          </div>
           <div class="swiper">
             <div class="swiper-wrapper">
               <?php foreach ($orderly_trainning_items as $item):

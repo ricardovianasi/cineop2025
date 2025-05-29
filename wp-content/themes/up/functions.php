@@ -71,7 +71,7 @@ if( !function_exists('template_setup')):
     add_image_size( 'block_workshop', 464, 464, true);
 
     // Masterclass
-    add_image_size( 'masterclass', 350, 415, true);
+    add_image_size( 'masterclass', 464, 550, true);
 
     // Movie
     add_image_size( 'movie_poster', 280, 432, true);

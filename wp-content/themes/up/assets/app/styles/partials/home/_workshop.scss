@@ -19,7 +19,7 @@
   }
 
   &-slider-main {
-    background-color: #fff;
+    background-color: $beige3;
     padding-right: 60px;
     position: relative;
     width: 80%;
@@ -32,7 +32,7 @@
   }
 
   &-item {
-    background-color: #fff;
+    background-color: $beige3;
     display: flex;
     gap: 24px;
     align-items: flex-start;
@@ -83,6 +83,14 @@
         font-size: 20px;
       }
     }
+
+    .subtitle {
+      color: #313131;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 140%;
+
+    }
   }
 
   figure,
@@ -122,7 +130,28 @@
   figure {
     height: 100%;
     position: relative;
-    width: 100%;
+    width: 46%;
+
+    &::before {
+      background-image: url("../images/workshop-id-figure.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position-y: bottom;
+      bottom: 0;
+      content: '';
+      height: 156px;
+      left: 0;
+      position: absolute;
+      width: 100%;
+
+      @include media('<=768px') {
+        height: 104px;
+      }
+    }
+
+    @include media('<=768px') {
+      width: 100%;
+    }
 
     img {
       height: 100%;
