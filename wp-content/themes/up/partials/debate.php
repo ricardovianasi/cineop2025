@@ -63,7 +63,7 @@ get_header(); ?>
           <div class="img-grid">
           <?php $cont=0; foreach ($block_image_grid as  $key => $img) {
             $cont++;
-            if ($cont >= 12) {
+            if ($cont >= 13) {
               break;
             }
             echo wp_get_attachment_image($img['ID'], 'debate_grid');
