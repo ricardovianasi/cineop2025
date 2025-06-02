@@ -59,7 +59,7 @@ get_header(); ?>
     <div class="debate-single">
       <?php if ($block_image_grid): ?>
       <div class="expanded">
-        <div class="container container-medium justify-center">
+        <div class="container container-small justify-center">
           <div class="img-grid">
           <?php $cont=0; foreach ($block_image_grid as  $key => $img) {
             $cont++;
