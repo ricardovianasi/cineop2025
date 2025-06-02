@@ -46,9 +46,9 @@ $heading_title_art = !empty($home_art['up_home_art_title'])
 $heading_title = $activity_type === 'debate' ? $heading_title_debate : $heading_title_art;
 
 get_header(); ?>
-<div class="main-container container container-1216 flex-col">
+<div class="main-container container container-medium flex-col">
   <div class="main-header">
-    <div class="container container-1216 flex-col">
+    <div class="container container-medium flex-col">
       <div class="main-header-title">
         <span class="h1 uppercase"><?php echo $heading_title ?></span>
       </div>
@@ -59,7 +59,7 @@ get_header(); ?>
     <div class="debate-single">
       <?php if ($block_image_grid): ?>
       <div class="expanded">
-        <div class="container container-big justify-center">
+        <div class="container container-medium justify-center">
           <div class="img-grid">
           <?php $cont=0; foreach ($block_image_grid as  $key => $img) {
             $cont++;

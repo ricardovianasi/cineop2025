@@ -5,14 +5,14 @@
 
   .img-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr);
 
     @include media('<=768px') {
       width: 100%;
     }
 
     img {
-      aspect-ratio: 4 / 3;
+      aspect-ratio: 1 / 1;
       object-fit: cover;
     }
   }
