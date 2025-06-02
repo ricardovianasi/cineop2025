@@ -64,7 +64,7 @@ if( !function_exists('template_setup')):
 
     // Debate
     add_image_size( 'debate', 416, 624, true);
-    add_image_size( 'debate_grid', 170, 200, true);
+    add_image_size( 'debate_grid', 230, 230, true);
     add_image_size( 'debate_list', 1172, 548, true);
 
     // Block
