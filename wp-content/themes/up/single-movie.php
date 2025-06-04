@@ -141,7 +141,7 @@ if (!empty($ano)) {
     ]);
     ?>
     <div class="main-content">
-      <div class="container content flex-col !px-0">
+      <div class="container container-small content flex-col !px-0">
         <div class="movie-details">
           <div class="content">
             <div class="section">
