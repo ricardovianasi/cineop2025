@@ -231,7 +231,7 @@ if (!empty($ano)) {
                   } ?>
                 </div>
                 <?php if ($up_general_prog): ?>
-                  <a href="<?php echo $up_general_prog ?>" class="btn orange">
+                  <a href="<?php echo $up_general_prog ?>" class="btn btn-red">
                     <?php echo __('Ver Programação Completa', 'up') ?>
                   </a>
                 <?php endif; ?>
