@@ -38,6 +38,11 @@ host('167.172.252.128')
   ->set('identity_file', '~/.ssh/id_rsa')
   ->set('deploy_path', '/var/www/html/{{application}}');
 
+host('45.55.227.187')
+  ->set('remote_user', 'root')
+  ->set('identity_file', '~/.ssh/id_rsa')
+  ->set('deploy_path', '/var/www/html/{{application}}');
+
 // Hooks
 //Task to change shared filenames.
 task('up:profiles', function () {

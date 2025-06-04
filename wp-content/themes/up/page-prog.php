@@ -94,14 +94,14 @@ ob_start(); ?>
             <button value="" class="btn btn-primary <?php echo !$day_filter ? 'active' : '' ?> ">
               <span><?php echo __('todos', 'up') ?></span></button>
             <?php
-            $prog_event_init = \DateTime::createFromFormat('Y-m-d', '2025-01-24');
-            $prog_event_end = \DateTime::createFromFormat('Y-m-d', '2025-02-01');
+            $prog_event_init = \DateTime::createFromFormat('Y-m-d', '2025-06-19');
+            $prog_event_end = \DateTime::createFromFormat('Y-m-d', '2025-06-24');
             while ($prog_event_init <= $prog_event_end) {
               echo sprintf(
                 "<button value='%s' name='dia' class='btn %s' type='submit'><span>%s</span></button>",
                 $prog_event_init->format('Y-m-d'),
                 $day_filter == $prog_event_init->format('Y-m-d') ? 'active' : '',
-                str_replace(['setembro', 'outubro', 'janeiro', 'fevereiro', 'junho'], ['set', 'out', 'jan', 'fev', 'jun'], date_i18n('d F', $prog_event_init->getTimestamp()))
+                str_replace(['setembro', 'outubro', 'janeiro', 'fevereiro', 'junho'], ['set', 'out', 'jan', 'fev', 'JUN'], date_i18n('d F', $prog_event_init->getTimestamp()))
               );
               $prog_event_init->add(new \DateInterval('P1D'));
             } ?>
@@ -114,7 +114,7 @@ ob_start(); ?>
       if (!empty($prog_per_days)) {
         foreach ($prog_per_days as $day => $prog_items) {
           $current_date = $day;
-          echo '<div class="prog-items-wrapper">';
+          echo '<div class="prog-items-wrapper"><div class="container">';
           echo '<div class="prog-day"><span>' . date_i18n('d \d\e F', $prog_items['start_date_time']->getTimestamp()) . '</span></div>';
           echo '<div class="prog-items-list">';
           foreach ($prog_items['items'] as $prog) :
@@ -158,9 +158,9 @@ ob_start(); ?>
                 </figure>
                 <div class="wrapper">
                   <div class="label">
-                    <span class="tag green"><?php echo $prog_real_label ?></span>
+                    <span class="tag black"><?php echo $prog_real_label ?></span>
                     <?php if ($prog_online): ?>
-                      <span class="tag green"><?php echo __('Assista on-line', 'up') ?></span>
+                      <span class="tag black"><?php echo __('Assista on-line', 'up') ?></span>
                     <?php endif; ?>
                   </div>
                   <div class="wrapper-bgc">
@@ -175,13 +175,14 @@ ob_start(); ?>
                       <?php endif; ?>
                     </span>
                     <?php if ($prog_real_link): ?>
-                      <span class="btn orange"><?php echo __('Saiba Mais', 'up') ?></span>
+                      <span class="btn btn-red"><?php echo __('Saiba Mais', 'up') ?></span>
                     <?php endif; ?>
                   </div>
                 </div>
               </a>
             </div>
           <?php endforeach;
+          echo '</div>';
           echo '</div>';
           echo '</div>';
 
