@@ -4,10 +4,9 @@
   }
 
   .main-header-bg {
-    margin-top: 0;
+    margin-top: 40px;
 
     figure {
-      @include expand;
       position: absolute !important;
     }
 
@@ -16,14 +15,11 @@
     }
 
     .container {
-      //align-items: center;
-      //max-width: 100%;
-      //padding: 0;
     }
 
     .main-header-title {
       background-color: rgba(0, 0, 0, 0.6);
-      margin-bottom: 2%;
+      margin-bottom: 0;
       padding: 10px 24px;
       margin-left: 0;
     }
