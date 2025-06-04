@@ -90,6 +90,10 @@
     padding: 110px 0;
     position: relative;
 
+    @include media('<=768px') {
+      padding: 0;
+    }
+
     &:nth-of-type(odd) {
       &::before {
         rotate: 6deg;
@@ -129,14 +133,15 @@
       top: 0;
       left: 50%;
       transform: translateX(-50%);
-      transform-origin: -10%
+      transform-origin: -10%;
+
+      @include media('<=768px') {
+        display: none;
+      }
 
     }
 
-    @include media('<=768px') {
-      margin-bottom: 24px;
-      padding-bottom: 24px;
-    }
+
 
     .container {
       align-items: flex-start;
@@ -152,8 +157,6 @@
     @include media('<=768px') {
       margin-bottom: 16px;
       margin-top: 24px;
-      height: 90px;
-      width: 90px;
     }
 
     span {
@@ -190,13 +193,17 @@
     position: relative;
 
     @include media('<=768px') {
-      margin-top: 24px;
+      margin-top: 0;
     }
   }
 
   &-item {
-    margin-bottom: 48px;
+    margin-bottom: 80px;
     position: relative;
+
+    @include media('<=768px') {
+      margin-bottom: 40px;
+    }
 
     p {
       margin-bottom: 0;

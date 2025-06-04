@@ -114,7 +114,7 @@ ob_start(); ?>
       if (!empty($prog_per_days)) {
         foreach ($prog_per_days as $day => $prog_items) {
           $current_date = $day;
-          echo '<div class="prog-items-wrapper"><div class="container">';
+          echo '<div class="prog-items-wrapper"><div class="container container-medium">';
           echo '<div class="prog-day"><span>' . date_i18n('d \d\e F', $prog_items['start_date_time']->getTimestamp()) . '</span></div>';
           echo '<div class="prog-items-list">';
           foreach ($prog_items['items'] as $prog) :
@@ -207,11 +207,11 @@ ob_start(); ?>
 <?php $contentAfter = ob_get_clean();
 
 get_header(); ?>
-  <div class="main-container container flex-col">
+  <div class="main-container container container-medium flex-col">
     <?php get_template_part('partials/heading', '', $args); ?>
 
     <div class="main-content">
-      <div class="container flex-col">
+      <div class="container container-medium flex-col">
         <div>
           <?php
           the_content();
