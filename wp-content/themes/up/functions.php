@@ -52,7 +52,7 @@ if( !function_exists('template_setup')):
 	  add_image_size( 'intro_gallery', 800, 452, true);
 
     // Thematic
-    add_image_size( 'thematic', 1176, 540, true);
+    add_image_size( 'thematic', 1200, 500, true);
     add_image_size( 'honor', 384, 456, true);
 
     // News

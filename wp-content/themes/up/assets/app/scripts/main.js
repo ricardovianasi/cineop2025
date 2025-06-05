@@ -24,6 +24,15 @@ $(document).ready(() => {
     })
   }
 
+  const tributeSlider = new Swiper('.home .tribute .swiper', {
+    slidesPerView: 1,
+    loop: true,
+    navigation: {
+      nextEl: `.home .tribute ${sliderNextEl}`,
+      prevEl: `.home .tribute ${sliderPrevEl}`,
+    },
+  });
+
   const banner = new Swiper('.banner-slider .swiper', {
     slidesPerView: 1,
     centeredSlides: true,

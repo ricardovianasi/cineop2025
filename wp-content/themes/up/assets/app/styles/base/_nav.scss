@@ -97,7 +97,7 @@
         top: calc(100% + 2px);
         visibility: hidden;
         transform: translate(-50%, 0%);
-        z-index: 100;
+        z-index: 1000000;
         transition: $transition-quick;
 
         @include media('<=1024px') {
