@@ -20,9 +20,9 @@ if (!empty($home_honor['up_home_honor_enabled'])):
                 ?>
                 <div class="swiper-slide">
                   <div class="tribute-item">
-                    <?php if (!empty($up_home_honor_image['ID'])): ?>
+                    <?php if (!empty($imagem['ID'])): ?>
                       <figure class="thematic-figure">
-                        <?php echo wp_get_attachment_image($up_home_honor_image['ID'], 'thematic') ?>
+                        <?php echo wp_get_attachment_image($imagem['ID'], 'thematic') ?>
                       </figure>
                     <?php endif; ?>
                     <div class="tribute-content">
