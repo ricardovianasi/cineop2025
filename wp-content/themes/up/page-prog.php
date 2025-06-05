@@ -94,8 +94,8 @@ ob_start(); ?>
             <button value="" class="btn btn-primary <?php echo !$day_filter ? 'active' : '' ?> ">
               <span><?php echo __('todos', 'up') ?></span></button>
             <?php
-            $prog_event_init = \DateTime::createFromFormat('Y-m-d', '2025-06-19');
-            $prog_event_end = \DateTime::createFromFormat('Y-m-d', '2025-06-24');
+            $prog_event_init = \DateTime::createFromFormat('Y-m-d', '2025-06-25');
+            $prog_event_end = \DateTime::createFromFormat('Y-m-d', '2025-06-30');
             while ($prog_event_init <= $prog_event_end) {
               echo sprintf(
                 "<button value='%s' name='dia' class='btn %s' type='submit'><span>%s</span></button>",
