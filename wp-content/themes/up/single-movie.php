@@ -132,6 +132,23 @@ if (!empty($ano)) {
   $tags[] = $ano;
 }
 
+$availableSection = "";
+if ($available) {
+  $availableSection = '<div class="info online">
+                <div class="info-item">
+                  <p class="title">
+                    <strong>Assista online</strong>
+                  </p>
+                  <div>
+                    <p>
+                      <i class="icon-mdi-calendar"></i>
+                      Sinal Disponível: ' . $available . '
+                    </p>
+                  </div>
+                </div>
+              </div>';
+}
+
 ?>
   <div class="main-container container container-1216 flex-col">
     <?php
@@ -167,13 +184,35 @@ if (!empty($ano)) {
               <?php endif; ?>
             </div>
 
-            <?php if ($playerObj->isPlayerOpen(get_the_ID())): ?>
+            <?php if (!empty($descricao_direcao)): ?>
               <div class="section">
+                <h3><?php echo __('Direção', 'up') ?></h3>
+                <?php foreach ($descricao_direcao as $dir):
+                  $dir_nome = $dir['nome'];
+                  $dir_desc = $dir['descricao'];
+                  $dir_img = $dir['imagem'];
+                  ?>
+                  <div class="direction">
+                    <?php if (!empty($dir_img['ID'])): ?>
+                      <figure><?php echo wp_get_attachment_image($dir_img['ID'], 'movie_dir') ?></figure>
+                    <?php endif; ?>
+                    <div>
+                      <p><strong><?php echo $dir_nome ?></strong></p>
+                      <?php echo $dir_desc ?>
+                    </div>
+                  </div>
+                <?php endforeach; ?>
+              </div>
+            <?php endif; ?>
+
+            <?php if ($playerObj->isPlayerOpen(get_the_ID())): ?>
+              <div class="section prog flex flex-col">
                 <h3><?php echo __('Assista', 'up') ?></h3>
-                <?php if ($available): ?>
-                  <p style="margin-top: 0; margin-bottom: 24px;"><strong>Sinal
-                      Disponível:</strong> <?php echo $available ?></p>
-                <?php endif; ?>
+
+                <?php if ($available) {
+                  echo $availableSection;
+                } ?>
+
                 <div class="main-player expanded">
                   <div class="container">
                     <?php echo $playerObj->player(get_the_ID()) ?>
@@ -187,17 +226,12 @@ if (!empty($ano)) {
               ?>
               <div class="section prog flex flex-col">
                 <h3><?php echo __('Programação', 'up') ?></h3>
+
+                <?php if ($available && !$playerObj->isPlayerOpen(get_the_ID())) {
+                  echo $availableSection;
+                } ?>
+
                 <div class="info">
-
-                  <?php if ($available && !$playerObj->isPlayerOpen(get_the_ID())): ?>
-                    <div class="info-item">
-                      <p class="title"><strong>Assista online</strong></p>
-                      <div>
-                        <p><i class="icon-mdi-calendar"></i>Sinal Disponível: <?php echo $available ?></p>
-                      </div>
-                    </div>
-                  <?php endif; ?>
-
                   <?php foreach ($prog_per_days as $day => $prog_items) {
                     $current_date = $day;
                     foreach ($prog_items['items'] as $prog) :
@@ -235,27 +269,6 @@ if (!empty($ano)) {
                     <?php echo __('Ver Programação Completa', 'up') ?>
                   </a>
                 <?php endif; ?>
-              </div>
-            <?php endif; ?>
-
-            <?php if (!empty($descricao_direcao)): ?>
-              <div class="section">
-                <h3><?php echo __('Direção', 'up') ?></h3>
-                <?php foreach ($descricao_direcao as $dir):
-                  $dir_nome = $dir['nome'];
-                  $dir_desc = $dir['descricao'];
-                  $dir_img = $dir['imagem'];
-                  ?>
-                  <div class="direction">
-                    <?php if (!empty($dir_img['ID'])): ?>
-                      <figure><?php echo wp_get_attachment_image($dir_img['ID'], 'movie_dir') ?></figure>
-                    <?php endif; ?>
-                    <div>
-                      <p><strong><?php echo $dir_nome ?></strong></p>
-                      <?php echo $dir_desc ?>
-                    </div>
-                  </div>
-                <?php endforeach; ?>
               </div>
             <?php endif; ?>
 

@@ -24,10 +24,6 @@
       margin-left: 0;
     }
   }
-
-  .main-player {
-    background-color: #000;
-  }
 }
 
 .movie-details {
@@ -199,6 +195,10 @@
 
   .prog {
 
+    .main-player {
+      margin-top: 48px;
+    }
+
     .btn {
       align-self: flex-end;
       margin-top: 24px;
@@ -217,8 +217,19 @@
       row-gap: 12px;
       position: relative;
 
-      &::before {
+      &:not(:first-of-type) {
+        margin-top: 24px;
+      }
+
+      &.online::before {
+        background-image: url("../images/prog-online.png");
+      }
+
+      &:not(.online)::before {
         background-image: url("../images/movie-prog.png");
+      }
+
+      &::before {
         background-size: cover;
         content: '';
         position: absolute;
