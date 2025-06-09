@@ -39,7 +39,7 @@ $(document).ready(() => {
     loop: true,
     spaceBetween: 20,
     pagination: {
-      el: '.banner-slider .slider-pagination',
+      el: '.banner .slider-pagination',
       type: 'bullets',
       clickable: true
     },

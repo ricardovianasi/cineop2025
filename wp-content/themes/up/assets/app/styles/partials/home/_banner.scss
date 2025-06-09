@@ -56,20 +56,14 @@
   }
 
   .slider-controls {
-    background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0) 56.71%,
-      #000000 89.71%
-    );
-    bottom: 0;
-    padding: 60px 32px;
-    position: absolute;
+    //position: absolute;
     width: 100%;
     z-index: 1000;
+    margin-top: 48px;
 
     @include media('<=768px') {
-      adding: 12px 0 0;
       position: relative;
+      margin-top: 24px;
     }
   }
 }

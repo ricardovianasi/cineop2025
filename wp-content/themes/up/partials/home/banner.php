@@ -39,20 +39,20 @@ if ($bannerItems): ?>
             <?php endforeach; ?>
           </div>
         </div>
-        <?php if (count($bannerItems) > 1): ?>
-          <div class="slider-controls">
-            <div class="slider-navigation">
-              <button class="slider-button-prev">
-                <i class="icon-arrow-left-2"></i>
-              </button>
-              <button class="slider-button-next">
-                <i class="icon-arrow-right-2"></i>
-              </button>
-            </div>
-            <div class="slider-pagination"></div>
-          </div>
-        <?php endif; ?>
       </div>
+      <?php if (count($bannerItems) > 1): ?>
+        <div class="slider-controls">
+          <div class="slider-navigation">
+            <button class="slider-button-prev">
+              <i class="icon-arrow-left-2"></i>
+            </button>
+            <button class="slider-button-next">
+              <i class="icon-arrow-right-2"></i>
+            </button>
+          </div>
+          <div class="slider-pagination"></div>
+        </div>
+      <?php endif; ?>
     </div>
     <div class="mobile">
       <svg width="360" height="47" viewBox="0 0 360 47" fill="none" xmlns="http://www.w3.org/2000/svg">
