@@ -35,7 +35,7 @@ if (!empty($home_debate['up_home_debate_enabled'])) {
 //
 //    }
 
-    $debate_items = array_chunk($orderly_debate_items, 2);
+    $debate_items = $orderly_debate_items;
 
     ?>
     <div class="debate">
