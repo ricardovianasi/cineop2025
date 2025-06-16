@@ -29,14 +29,11 @@ if (!empty($home_debate['up_home_debate_enabled'])) {
     }
     ksort($orderly_debate_items);
 
-//    if (wp_is_mobile()) {
-//      $debate_items = $orderly_debate_items;
-//    } else {
-//
-//    }
-
-    $debate_items = $orderly_debate_items;
-
+    if (wp_is_mobile()) {
+      $debate_items = $orderly_debate_items;
+    } else {
+      $debate_items = array_chunk($orderly_debate_items, 2);
+    }
     ?>
     <div class="debate">
       <div class="container container-big flex-col">
@@ -46,51 +43,98 @@ if (!empty($home_debate['up_home_debate_enabled'])) {
         <div class="debate-items">
           <div class="swiper">
             <div class="swiper-wrapper">
-              <?php foreach ($debate_items as $debate_page): ?>
-                <div class="swiper-slide">
-                  <?php foreach ($debate_page as $debate):
-                    $item_tag = get_field('presentation_tag', $debate);
-                    $item_date = get_field('presentation_date', $debate);
-                    $item_subtitle = get_field('presentation_subtitle', $debate);
-                    $item_obs = get_field('presentation_obs', $debate);
 
-                    $item_image_list = get_field('presentation_image', $debate);
-                    $item_image_home = get_field('presentation_image_home', $debate);
-                    $block_image_grid = get_field('presentation_image_grid', $debate);
-                    $item_image = $item_image_home ? $item_image_home : $item_image_list;
+              <?php if (wp_is_mobile()):  ?>
+                <?php foreach ($debate_items as $debate):
+                  $item_tag = get_field('presentation_tag', $debate);
+                  $item_date = get_field('presentation_date', $debate);
+                  $item_subtitle = get_field('presentation_subtitle', $debate);
+                  $item_obs = get_field('presentation_obs', $debate);
 
-                    $item_place = '';
-                    $cat_place_terms = get_the_terms($debate->ID, 'cat_place');
-                    $cat_place_terms = is_array($cat_place_terms) ? $cat_place_terms[0] : $cat_place_terms;
-                    if ($cat_place_terms) {
-                      $item_place = $cat_place_terms->name;
-                    } ?>
-                    <div class="debate-item">
-                      <?php if ($block_image_grid): ?>
-                        <div class="debate-img-grid">
-                          <?php foreach ($block_image_grid as $key => $img) {
-                            echo wp_get_attachment_image($img['ID'], 'prog');
-                          } ?>
-                        </div>
-                      <?php elseif ($item_image['ID']): ?>
-                        <figure><?php echo wp_get_attachment_image($item_image['ID'], 'debate') ?></figure>
-                      <?php endif; ?>
-                      <div class="desc">
-                        <h3 class="title upppercase"><?php echo get_the_title($debate) ?></h3>
-                        <?php if ($item_date): ?>
-                          <span class="date"><?php echo $item_date; ?></span>
-                        <?php endif; ?>
-                        <p class="excerpt">
-                          <?php echo get_the_excerpt($debate); ?>
-                        </p>
-                        <a class="btn-red"
-                           href="<?php echo get_the_permalink($debate) ?>"><?php echo __('Ver Mais', 'up') ?><i
-                            class="icon-arrow-right"></i></a>
+                  $item_image_list = get_field('presentation_image', $debate);
+                  $item_image_home = get_field('presentation_image_home', $debate);
+                  $block_image_grid = get_field('presentation_image_grid', $debate);
+                  $item_image = $item_image_home ? $item_image_home : $item_image_list;
+
+                  $item_place = '';
+                  $cat_place_terms = get_the_terms($debate->ID, 'cat_place');
+                  $cat_place_terms = is_array($cat_place_terms) ? $cat_place_terms[0] : $cat_place_terms;
+                  if ($cat_place_terms) {
+                    $item_place = $cat_place_terms->name;
+                  } ?>
+                  <div class="swiper-slide"><div class="debate-item">
+                    <?php if ($block_image_grid): ?>
+                      <div class="debate-img-grid">
+                        <?php foreach ($block_image_grid as $key => $img) {
+                          echo wp_get_attachment_image($img['ID'], 'prog');
+                        } ?>
                       </div>
+                    <?php elseif ($item_image['ID']): ?>
+                      <figure><?php echo wp_get_attachment_image($item_image['ID'], 'debate') ?></figure>
+                    <?php endif; ?>
+                    <div class="desc">
+                      <h3 class="title upppercase"><?php echo get_the_title($debate) ?></h3>
+                      <?php if ($item_date): ?>
+                        <span class="date"><?php echo $item_date; ?></span>
+                      <?php endif; ?>
+                      <p class="excerpt">
+                        <?php echo get_the_excerpt($debate); ?>
+                      </p>
+                      <a class="btn-red"
+                         href="<?php echo get_the_permalink($debate) ?>"><?php echo __('Ver Mais', 'up') ?><i
+                          class="icon-arrow-right"></i></a>
                     </div>
-                  <?php endforeach; ?>
-                </div>
-              <?php endforeach; ?>
+                    </div></div>
+                <?php endforeach; ?>
+              <?php else: ?>
+                <?php foreach ($debate_items as $debate_page): ?>
+                  <div class="swiper-slide">
+                    <?php foreach ($debate_page as $debate):
+                      $item_tag = get_field('presentation_tag', $debate);
+                      $item_date = get_field('presentation_date', $debate);
+                      $item_subtitle = get_field('presentation_subtitle', $debate);
+                      $item_obs = get_field('presentation_obs', $debate);
+
+                      $item_image_list = get_field('presentation_image', $debate);
+                      $item_image_home = get_field('presentation_image_home', $debate);
+                      $block_image_grid = get_field('presentation_image_grid', $debate);
+                      $item_image = $item_image_home ? $item_image_home : $item_image_list;
+
+                      $item_place = '';
+                      $cat_place_terms = get_the_terms($debate->ID, 'cat_place');
+                      $cat_place_terms = is_array($cat_place_terms) ? $cat_place_terms[0] : $cat_place_terms;
+                      if ($cat_place_terms) {
+                        $item_place = $cat_place_terms->name;
+                      } ?>
+                      <div class="debate-item">
+                        <?php if ($block_image_grid): ?>
+                          <div class="debate-img-grid">
+                            <?php foreach ($block_image_grid as $key => $img) {
+                              echo wp_get_attachment_image($img['ID'], 'prog');
+                            } ?>
+                          </div>
+                        <?php elseif ($item_image['ID']): ?>
+                          <figure><?php echo wp_get_attachment_image($item_image['ID'], 'debate') ?></figure>
+                        <?php endif; ?>
+                        <div class="desc">
+                          <h3 class="title upppercase"><?php echo get_the_title($debate) ?></h3>
+                          <?php if ($item_date): ?>
+                            <span class="date"><?php echo $item_date; ?></span>
+                          <?php endif; ?>
+                          <p class="excerpt">
+                            <?php echo get_the_excerpt($debate); ?>
+                          </p>
+                          <a class="btn-red"
+                             href="<?php echo get_the_permalink($debate) ?>"><?php echo __('Ver Mais', 'up') ?><i
+                              class="icon-arrow-right"></i></a>
+                        </div>
+                      </div>
+                    <?php endforeach; ?>
+                  </div>
+                <?php endforeach; ?>
+              <?php endif; ?>
+
+
             </div>
           </div>
         </div>
