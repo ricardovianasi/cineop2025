@@ -29,11 +29,14 @@ if (!empty($home_debate['up_home_debate_enabled'])) {
     }
     ksort($orderly_debate_items);
 
-    if (wp_is_mobile()) {
-      $debate_items = $orderly_debate_items;
-    } else {
-      $debate_items = array_chunk($orderly_debate_items, 2);
-    }
+//    if (wp_is_mobile()) {
+//      $debate_items = $orderly_debate_items;
+//    } else {
+//
+//    }
+
+    $debate_items = array_chunk($orderly_debate_items, 2);
+
     ?>
     <div class="debate">
       <div class="container container-big flex-col">

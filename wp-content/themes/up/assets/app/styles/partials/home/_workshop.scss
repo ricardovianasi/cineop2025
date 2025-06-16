@@ -132,6 +132,10 @@
     position: relative;
     width: 464px;
 
+    @include media('<=768px') {
+      display: none;
+    }
+
     &::before {
       background-image: url("../images/workshop-id-figure.png");
       background-size: contain;
