@@ -43,8 +43,7 @@ if (!empty($home_debate['up_home_debate_enabled'])) {
         <div class="debate-items">
           <div class="swiper">
             <div class="swiper-wrapper">
-
-              <?php if (wp_is_mobile()):  ?>
+              <?php if (wp_is_mobile()): ?>
                 <?php foreach ($debate_items as $debate):
                   $item_tag = get_field('presentation_tag', $debate);
                   $item_date = get_field('presentation_date', $debate);
@@ -62,29 +61,31 @@ if (!empty($home_debate['up_home_debate_enabled'])) {
                   if ($cat_place_terms) {
                     $item_place = $cat_place_terms->name;
                   } ?>
-                  <div class="swiper-slide"><div class="debate-item">
-                    <?php if ($block_image_grid): ?>
-                      <div class="debate-img-grid">
-                        <?php foreach ($block_image_grid as $key => $img) {
-                          echo wp_get_attachment_image($img['ID'], 'prog');
-                        } ?>
-                      </div>
-                    <?php elseif ($item_image['ID']): ?>
-                      <figure><?php echo wp_get_attachment_image($item_image['ID'], 'debate') ?></figure>
-                    <?php endif; ?>
-                    <div class="desc">
-                      <h3 class="title upppercase"><?php echo get_the_title($debate) ?></h3>
-                      <?php if ($item_date): ?>
-                        <span class="date"><?php echo $item_date; ?></span>
+                  <div class="swiper-slide">
+                    <div class="debate-item">
+                      <?php if ($block_image_grid): ?>
+                        <div class="debate-img-grid">
+                          <?php foreach ($block_image_grid as $key => $img) {
+                            echo wp_get_attachment_image($img['ID'], 'prog');
+                          } ?>
+                        </div>
+                      <?php elseif ($item_image['ID']): ?>
+                        <figure><?php echo wp_get_attachment_image($item_image['ID'], 'debate') ?></figure>
                       <?php endif; ?>
-                      <p class="excerpt">
-                        <?php echo get_the_excerpt($debate); ?>
-                      </p>
-                      <a class="btn-red"
-                         href="<?php echo get_the_permalink($debate) ?>"><?php echo __('Ver Mais', 'up') ?><i
-                          class="icon-arrow-right"></i></a>
+                      <div class="desc">
+                        <h3 class="title upppercase"><?php echo get_the_title($debate) ?></h3>
+                        <?php if ($item_date): ?>
+                          <span class="date"><?php echo $item_date; ?></span>
+                        <?php endif; ?>
+                        <p class="excerpt">
+                          <?php echo get_the_excerpt($debate); ?>
+                        </p>
+                        <a class="btn-red"
+                           href="<?php echo get_the_permalink($debate) ?>"><?php echo __('Ver Mais', 'up') ?><i
+                            class="icon-arrow-right"></i></a>
+                      </div>
                     </div>
-                    </div></div>
+                  </div>
                 <?php endforeach; ?>
               <?php else: ?>
                 <?php foreach ($debate_items as $debate_page): ?>
@@ -133,8 +134,6 @@ if (!empty($home_debate['up_home_debate_enabled'])) {
                   </div>
                 <?php endforeach; ?>
               <?php endif; ?>
-
-
             </div>
           </div>
         </div>
