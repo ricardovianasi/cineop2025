@@ -12,7 +12,7 @@ set('application', 'cineop2025');
 set('repository', 'git@github.com:ricardovianasi/cineop2025.git');
 
 // [Optional] Allocate tty for git clone. Default value is false.
-set('git_tty', true);
+//set('git_tty', true);
 set('ssh_type', 'native');
 set('ssh_multiplexing', true);
 
