@@ -22,20 +22,6 @@ get_header();
         <?php $count = 3; $last = 'blue'; foreach ($fichas as $ficha):
           $ficha_funcao = get_field('ficha_funcao', $ficha);
           $ficha_image = get_field('ficha_img', $ficha);
-          
-          if ($count === 6) {
-            $type = ($last === 'blue' ? 'black' : 'blue');
-            $last = $type;
-            $count = 0;
-
-            echo '<div class="black-card">
-                <figure><img src="/wp-content/themes/up/assets/dist/images/ficha.png"></figure>
-              </div>';
-            echo '<div class="blue-card">
-                <figure><img src="/wp-content/themes/up/assets/dist/images/ficha.png"></figure>
-              </div>';
-          }
-          $count++;
           ?>
           <div>
             <?php if ($ficha_image['ID']): ?>
