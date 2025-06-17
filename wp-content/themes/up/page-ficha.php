@@ -10,7 +10,7 @@ get_header();
 <div class="main-container container container-1216 flex-col">
   <?php get_template_part('partials/heading', '', $args); ?>
   <div class="main-content">
-    <div class="container content flex-col">
+    <div class="container container-small flex-col">
       <?php
       $fichas = get_posts([
         'post_type' => 'ficha',
