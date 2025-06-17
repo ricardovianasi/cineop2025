@@ -121,7 +121,7 @@ if (!empty($home_art['up_home_art_enabled'])) {
                           <span><?php echo $item_place ?></span>
                         </p>
                       </div>
-                      <a href="<?php echo get_the_permalink($art) ?>" class="btn-secondary">Saiba Mais</a>
+                      <a href="<?php echo get_the_permalink($art) ?>" class="btn-red">Saiba Mais</a>
                     </div>
                   </div>
                 <?php endforeach; ?>
