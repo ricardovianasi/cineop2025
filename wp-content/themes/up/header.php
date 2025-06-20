@@ -66,7 +66,7 @@ $up_general_header_cta_url = $up_general_header_cta['url'] ?? false;
   </script>
 
   <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/dist/styles/vendor.css">
-  <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/dist/styles/main.css?v=5">
+  <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/dist/styles/main.css?v=6">
 </head>
 <body class="<?php echo implode(' ', $body_classes) ?>">
 <header class="header">
