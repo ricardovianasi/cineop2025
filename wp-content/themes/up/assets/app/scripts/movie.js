@@ -61,7 +61,7 @@
     });
 
     player.on('loadingSpalla', (e) => {
-      const currentVideoId = e?.id;
+      const currentVideoId = e.id;
       if (!currentVideoId) {
         return;
       }
