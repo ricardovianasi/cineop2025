@@ -147,7 +147,7 @@ class UP_Player {
           <?php if( $player_playlist ): ?>
             <div id="player-content"
               data-project='<?php echo $player_project_id ?>'
-              data-playlist='<?php echo json_encode($player_playlist)?>'>
+              data-playlist='<?php echo implode(';', $player_playlist)?>'>
             </div>
           <?php elseif( $player_embed ): ?>
             <div id="player-content"><?php echo $player_embed ?></div>

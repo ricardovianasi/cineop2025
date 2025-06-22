@@ -106,10 +106,14 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
+<script
+  src="https://beyond.spalla.io/player/js/spalla.player.js"
+  charset="UTF-8"
+></script>
+
 <script src="<?php bloginfo('template_directory'); ?>/assets/dist/scripts/vendor.js?v=2.1"></script>
-<script src="<?php bloginfo('template_directory'); ?>/assets/dist/scripts/main.js?v=3"></script>
-<script samba-player-api="player" type="text/javascript"
-        src="https://player.sambatech.com.br/v3/samba.player.api.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/assets/dist/scripts/main.js?v=4"></script>
+
 <?php wp_footer(); ?>
 
 </body>

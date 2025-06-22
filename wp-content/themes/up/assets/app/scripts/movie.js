@@ -31,49 +31,45 @@
   $.fn.mediaplayer = function() {
     var $this = $(this),
       $mediaPlayer = $('#player-content', $this),
-      playlistMedias = $mediaPlayer.data('playlist'),
+      playlistData = $mediaPlayer.data('playlist'),
       projectId = $mediaPlayer.data('project'),
       thumbnail = $mediaPlayer.data('thumbnail');
 
-    if( !playlistMedias ) {
+    if( !playlistData ) {
       return
     }
 
-    if( !projectId ) {
-      projectId = 'e2973506fea631750e9ee97a4dff1bfb';
-    }
+    const playlistItems = playlistData.split(';');
+    let currentIndex = 0;
 
-    var player = new SambaPlayer('player-content', { //player é o ID do elemento html que ele vai inserir o iframe
+    const player = new SpallaPlayer('player-content', { //player é o ID do elemento html que ele vai inserir o iframe
+      videoId: playlistItems[currentIndex],
       height: 360,
       width: 640,
-      //ph: "e2973506fea631750e9ee97a4dff1bfb",//Player Hash do projeto
-      //m: "aff747e48d9fe6face8b5ede6632bd48",//MidiaID
-      captionTheme: '[ffffff,32,pt-br]',
-      playlist: {
-        titles: [],
-        ph: projectId,
-        medias: playlistMedias,
-        loop: false,
-        timeout: 5,
-        autoplay: true,
-        sequence: true,
-        volume: 100,
-      },
-      playerParams: { //Veja a lista de Parâmetros suportados
-        volume: 50,
-        thumbnailURL: thumbnail,
-        //resume: 43,
-        hasEmbed: false,
-        enableShare: false,
-        captionTheme: '[ffffff,32,pt-br]',
-      },
-      events: {
-        '*': function( e ) {
-          if( e.event == 'onLoad' ) {
-            player.unmute();
-          }
-        },
+    });
+
+    player.on('ended', (e) => {
+      currentIndex++;
+
+      if (currentIndex < playlistItems.length) {
+        const nextVideoId = playlistItems[currentIndex];
+        player.changeMedia({
+          videoId: nextVideoId,
+          autoplay: true
+        });
       }
     });
+
+    player.on('loadingSpalla', (e) => {
+      const currentVideoId = e?.id;
+      if (!currentVideoId) {
+        return;
+      }
+
+      if (currentVideoId !== playlistItems[0]) {
+        player.play();
+      }
+    });
+
   };
 })(jQuery);
