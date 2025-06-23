@@ -23,7 +23,6 @@ foreach ($exposure_internal as $expo):
 
   <div class="exposition-desc">
     <span class="exposition-theme"><?php echo $expo_theme ?></span>
-    <p><?php echo get_the_content('', '', $expo); ?></p>
   </div>
 
   <?php
