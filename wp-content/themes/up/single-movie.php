@@ -231,39 +231,42 @@ if ($available) {
                   echo $availableSection;
                 } ?>
 
-                <div class="info">
-                  <?php foreach ($prog_per_days as $day => $prog_items) {
-                    $current_date = $day;
-                    foreach ($prog_items['items'] as $prog) :
-                      $prog_start = get_field('prog_start', $prog);
-                      $prog_date = get_field('prog_date', $prog);
-                      $prog_label = get_field('prog_label', $prog);
-                      $prog_type = get_field('prog_type', $prog);
+                <?php if (!empty($prog_per_days)): ?>
+                  <div class="info">
+                    <?php foreach ($prog_per_days as $day => $prog_items) {
+                      $current_date = $day;
+                      foreach ($prog_items['items'] as $prog) :
+                        $prog_start = get_field('prog_start', $prog);
+                        $prog_date = get_field('prog_date', $prog);
+                        $prog_label = get_field('prog_label', $prog);
+                        $prog_type = get_field('prog_type', $prog);
 
-                      $prog_place = get_the_terms($prog->ID, 'cat_place');
-                      $prog_place = $prog_place ? join(', ', wp_list_pluck($prog_place, 'name')) : '';
+                        $prog_place = get_the_terms($prog->ID, 'cat_place');
+                        $prog_place = $prog_place ? join(', ', wp_list_pluck($prog_place, 'name')) : '';
 
-                      $prog_real_date = $prog_date;
-                      if (!$prog_real_date) {
-                        $prog_start_date_time_obj = \DateTime::createFromFormat('d/m/Y H:i:s', $prog_start);
-                        $prog_real_date = date_i18n('d/m \| l \| H:i', $prog_start_date_time_obj->getTimestamp());
-                        $prog_real_date = str_replace('-feira', '', $prog_real_date);
-                      }
+                        $prog_real_date = $prog_date;
+                        if (!$prog_real_date) {
+                          $prog_start_date_time_obj = \DateTime::createFromFormat('d/m/Y H:i:s', $prog_start);
+                          $prog_real_date = date_i18n('d/m \| l \| H:i', $prog_start_date_time_obj->getTimestamp());
+                          $prog_real_date = str_replace('-feira', '', $prog_real_date);
+                        }
 
-                      $prog_real_label = $prog_label;
-                      if (!$prog_real_label) {
-                        $prog_real_label = $prog_type->name;
-                      } ?>
-                      <div class="info-item">
-                        <p class="title"><strong><?php echo $prog_real_label ?></strong></p>
-                        <div>
-                          <p><i class="icon-mdi-calendar"></i><?php echo $prog_real_date ?></p>
-                          <p><i class="icon-pin-fill"></i><?php echo $prog_place ?></p>
+                        $prog_real_label = $prog_label;
+                        if (!$prog_real_label) {
+                          $prog_real_label = $prog_type->name;
+                        } ?>
+                        <div class="info-item">
+                          <p class="title"><strong><?php echo $prog_real_label ?></strong></p>
+                          <div>
+                            <p><i class="icon-mdi-calendar"></i><?php echo $prog_real_date ?></p>
+                            <p><i class="icon-pin-fill"></i><?php echo $prog_place ?></p>
+                          </div>
                         </div>
-                      </div>
-                    <?php endforeach;
-                  } ?>
-                </div>
+                      <?php endforeach;
+                    } ?>
+                  </div>
+                <?php endif; ?>
+
                 <?php if ($up_general_prog): ?>
                   <a href="<?php echo $up_general_prog ?>" class="btn btn-red">
                     <?php echo __('Ver Programação Completa', 'up') ?>

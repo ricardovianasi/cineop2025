@@ -125,7 +125,7 @@ class UP_Player {
     $player_playlist = [];
     for ($i = 1; $i<10; $i++) {
       if( $media_id = $this->getField( self::PLAYER_PLAYLIST.$i )  ) {
-        $player_playlist[] = array('id' => trim($media_id));
+        $player_playlist[] = trim($media_id);
       }
     }
 
