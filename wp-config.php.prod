@@ -25,6 +25,8 @@ define('WP_HOME','https://cineop.com.br/');
 define('WP_SITEURL','https://cineop.com.br/');
 define('RELOCATE',true);
 
+define('WP_MEMORY_LIMIT', '256M');
+
 define( 'AS3CF_SETTINGS', serialize( array(
     'provider' => 'do',
     'access-key-id' => 'DW436QBNUYCSRI5ZNHHT',
