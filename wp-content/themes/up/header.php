@@ -54,7 +54,7 @@ $up_general_header_cta_url = $up_general_header_cta['url'] ?? false;
   </script>
 
   <?php wp_head(); ?>
-  
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2D766434XR"></script>
   <script>
