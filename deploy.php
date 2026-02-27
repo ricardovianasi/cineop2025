@@ -29,7 +29,7 @@ set('assets_dir', '2025/wp-content/themes/up/assets');
 set('rsync_src', __DIR__ . '/2025/wp-content/themes/up/assets/dist');
 set('rsync_dest', '{{release_path}}/2025/wp-content/themes/up/assets/');
 
-set('prod_files', ['wp-config.php.prod', '.htaccess.prod']);
+set('prod_files', ['2025/wp-config.php.prod', '2025/.htaccess.prod']);
 
 // Hosts
 
