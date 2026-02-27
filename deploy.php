@@ -17,26 +17,26 @@ set('ssh_type', 'native');
 set('ssh_multiplexing', true);
 
 // Shared files/dirs between deploys
-set('shared_dirs', ['wp-content/uploads', 'wp-content/ewww', 'wp-content/cache', 'wp-content/w3tc-config', 'wp-content/languages']);
-set('writable_dirs', ['wp-content/uploads', 'wp-content/ewww', 'wp-content/cache', 'wp-content/w3tc-config', 'wp-content/languages']);
+set('shared_dirs', ['2025/wp-content/uploads', '2025/wp-content/ewww', '2025/wp-content/cache', '2025/wp-content/w3tc-config', '2025/wp-content/languages']);
+set('writable_dirs', ['2025/wp-content/uploads', '2025/wp-content/ewww', '2025/wp-content/cache', '2025/wp-content/w3tc-config', '2025/wp-content/languages']);
 
 set('http_user', 'www-data');
 set('writable_chmod_mode', '0755');
 set('writable_mode', 'chown');
 
 // Assets Dir
-set('assets_dir', 'wp-content/themes/up/assets');
-set('rsync_src', __DIR__ . '/wp-content/themes/up/assets/dist');
-set('rsync_dest', '{{release_path}}/wp-content/themes/up/assets/');
+set('assets_dir', '2025/wp-content/themes/up/assets');
+set('rsync_src', __DIR__ . '/2025/wp-content/themes/up/assets/dist');
+set('rsync_dest', '{{release_path}}/2025/wp-content/themes/up/assets/');
 
 set('prod_files', ['wp-config.php.prod', '.htaccess.prod']);
 
 // Hosts
 
-host('167.172.252.128')
-  ->set('remote_user', 'root')
-  ->set('identity_file', '~/.ssh/id_rsa')
-  ->set('deploy_path', '/var/www/html/{{application}}');
+//host('167.172.252.128')
+//  ->set('remote_user', 'root')
+//  ->set('identity_file', '~/.ssh/id_rsa')
+//  ->set('deploy_path', '/var/www/html/{{application}}');
 
 host('45.55.227.187')
   ->set('remote_user', 'root')
