@@ -21,8 +21,8 @@
 
 $_SERVER['HTTPS']='on';
 
-define('WP_HOME','https://cineop.com.br/');
-define('WP_SITEURL','https://cineop.com.br/');
+define('WP_HOME','https://cineop.com.br/2025/');
+define('WP_SITEURL','https://cineop.com.br/2025/');
 define('RELOCATE',true);
 
 define('WP_MEMORY_LIMIT', '256M');
