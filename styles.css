@@ -222,12 +222,12 @@ a:first-of-type {
   }
 
   h2 {
-    font-size: 40px;
-    margin-bottom: 24px;
+    font-size: 18px;
+    margin-bottom: 8px;
   }
 
   h3 {
-    font-size: 26px;
+    font-size: 14px;
     font-weight: 900;
     letter-spacing: .08em;
     margin-bottom: 6px;
